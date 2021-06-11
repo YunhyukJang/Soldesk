@@ -4,6 +4,7 @@ public class IfExample06 {
 
 	public static void main(String[] args) {
 		int num=(int)(Math.random()*6)+1; //+1 *1부터 시작하기 위함
+		//double num1=(int)(Math.random()*6); //실수인 숫자가 랜덤으로 추출
 		
 		System.out.println(num);
 		
