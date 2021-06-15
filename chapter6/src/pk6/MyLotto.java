@@ -10,7 +10,7 @@ public class MyLotto {
 		
 		System.out.println("이번 주 로또 예상 번호");
 		
-		outer:for(int i=0; i<lotto.length; i++) { //i++ 생략 가능
+		outer:for(int i=0; i<lotto.length;) { //i++ 생략 가능
 			lotto[i]=new Random().nextInt(45)+1;
 			
 			//중복 값을 비교하는 반복문
@@ -21,6 +21,8 @@ public class MyLotto {
 			}
 			
 			System.out.println(lotto[i]+" ");
+			
+			i++;
 		}
 	}
 }
