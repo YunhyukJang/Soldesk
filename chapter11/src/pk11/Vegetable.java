@@ -5,6 +5,8 @@ public class Vegetable {
 	String season;
 	String name;
 	
+	//기본 생성자
+	
 	//메서드를 활용하여 멤버 변수 set
 	public void Set1(String sort, String season, String name) {
 		this.sort=sort;
