@@ -1,8 +1,8 @@
-package pk11;
+package test;
 
 public class VIPCustomer extends Customer {
 	private int agentID; //전문 상담원
-	private double saleRatio; //10% 세일
+	double saleRatio; //10% 세일
 	
 	//생성자 이용(고객의 아이디, 이름, 상담원 아이디)
 	//생성자 이용(등급=VIP, bonusRatio=0.05, saleRatio)
