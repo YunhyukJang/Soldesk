@@ -35,7 +35,7 @@ public class ObjectArrayClone {
 		
 		bookList.add(book1);
 		bookList.add(book2);
-		bookList.add(book3);
+		bookList.add(new MyBook("파이썬 웹 프로그래밍"));
 		
 		ArrayList<MyBook> copyList=(ArrayList)bookList.clone();
 		
@@ -52,5 +52,7 @@ public class ObjectArrayClone {
 		System.out.println(bookList);
 		System.out.println("------------------------------");
 		System.out.println(copyList);
+		System.out.println("------------------------------");
+		System.out.println(book3);
 	}
 }

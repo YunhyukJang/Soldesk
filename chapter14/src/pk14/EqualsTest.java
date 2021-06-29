@@ -35,9 +35,12 @@ public class EqualsTest {
 			System.out.println("sHarry와 sHarry1은 다른 인물입니다.");
 		}
 		
-		System.out.println("-----hashcode-----");
-		System.out.println(sHarry.hashCode());
-		System.out.println(sPotter.hashCode());
-		System.out.println(sHarry1.hashCode());
+		System.out.println("-----데이터 값 출력-----");
+		System.out.println("sHarry의 hashCode="+sHarry.hashCode());
+		System.out.println("sHarry1의 hashCode="+sHarry1.hashCode());
+		
+		System.out.println("-----Student의 실제 값 출력-----");
+		System.out.println("sHarry의 실제 값="+System.identityHashCode(sHarry));
+		System.out.println("sHarry1의 실제 값="+System.identityHashCode(sHarry1));
 	}
 }
