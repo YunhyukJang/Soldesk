@@ -44,7 +44,7 @@ public class InStack {
 	}
 	
 	//스택에서 데이터를 팝(정상에 있는 데이터를 꺼냄)
-	public int pop(int x) throws emptyIntStackException {
+	public int pop() throws emptyIntStackException {
 		if(ptr <= 0) {
 			throw new emptyIntStackException();
 		}
@@ -67,5 +67,30 @@ public class InStack {
 			if(stx[i] == x)
 				return i; //검색 성공
 				return -1; //검색 실패
+	}
+	
+	//스택을 비움
+	public void clear() {
+		ptr=0;
+	}
+	
+	//스택의 용량 확인
+	public int capacity() {
+		return max;
+	}
+	
+	//스택에 쌓여있는 데이터 수
+	public int size() {
+		return ptr;
+	}
+	
+	//스택이 비어있는지 질문
+	public boolean isEmpty() {
+		return ptr <= 0; //if(ptr <= 0)
+	}
+	
+	//스택이 차있는지 질문
+	public boolean isFull() {
+		return ptr >= max;
 	}
 }
