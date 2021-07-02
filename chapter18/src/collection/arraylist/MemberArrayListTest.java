@@ -1,4 +1,4 @@
-package collection.arraylist_stack_queue;
+package collection.arraylist;
 
 import collection.Member;
 

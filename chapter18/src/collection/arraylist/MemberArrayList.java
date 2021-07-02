@@ -1,4 +1,4 @@
-package collection.arraylist_stack_queue;
+package collection.arraylist;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -40,6 +40,7 @@ public class MemberArrayList {
 				
 				return true;
 			}
+			
 		}
 		
 		return false;
