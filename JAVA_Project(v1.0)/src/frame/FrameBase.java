@@ -25,7 +25,7 @@ public class FrameBase extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	//싱글톤 기법을 사용하려고 한다
+	//Singleton 기법을 사용하려고 한다.
 	public static void getInstance(JPanel e) {
 		//static으로 선언했으므로 해당 메서드가 생성자보다도 먼저 호출된다.
 		instance=new FrameBase(e); //생성자를 통해 기본 프레임 정의
