@@ -8,3 +8,5 @@ alter user soldesk account lock;
 --권한 부여
 grant connect, resource to soldesk;
 grant connect, resource to madang;
+grant create table, create view to soldesk;
+grant create table, create view to madang;

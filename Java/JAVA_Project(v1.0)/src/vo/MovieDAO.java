@@ -102,7 +102,7 @@ public class MovieDAO {
 	//이름으로 영화 정보를 찾는 메서드
 	public Movie searchMovie(String name) {
 		for(int i=0; i<list.size(); i++) {
-			if (list.get(i).getmName().equals(name)) {
+			if(list.get(i).getmName().equals(name)) {
 				return list.get(i);
 			}
 			
@@ -113,7 +113,7 @@ public class MovieDAO {
 
 	//예매 정보 리스트에 방금 예매한 정보를 등록
 	public void addReserveInfo(MyMovie e) {
-		reserveList.add( new MyMovie(e.getmName(),e.getTime(),e.getSeat()));
+		reserveList.add(new MyMovie(e.getmName(), e.getTime(), e.getSeat()));
 	}
 
 	//이미 예매된 정보인지 검색
