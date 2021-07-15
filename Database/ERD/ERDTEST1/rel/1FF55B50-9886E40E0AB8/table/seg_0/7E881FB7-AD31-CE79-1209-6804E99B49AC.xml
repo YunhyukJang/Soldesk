@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7E881FB7-AD31-CE79-1209-6804E99B49AC" name="TB_TEST1">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:09:40 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="6BCE090A-017B-302B-58C3-09430FE67BE8">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:11:48 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="7504C28D-E5BC-ACF8-F271-059508FE61D6">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:11:48 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="addr" id="7F14BAE6-2E27-F4FB-F76A-B0947BFB3307">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:11:48 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0E0E425A-A335-67A1-5C0E-459441553B70" name="TB_TEST1_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:11:48 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6BCE090A-017B-302B-58C3-09430FE67BE8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

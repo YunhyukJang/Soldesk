@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0647A0BF-11CB-1DB5-D01C-A344125B767E" name="TB_TEST2">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:12:30 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="4E3CB1F2-2D3B-06A2-AB4F-1742C1DA64A8">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:14:20 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TB_TEST_ID" id="2CC5A903-963C-8B88-8762-758965B8192B">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:14:20 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="ED20283E-0B28-BB27-2AC3-9BFA98A94A8D" referredColumn="6BCE090A-017B-302B-58C3-09430FE67BE8"/>
+</associations>
+</Column>
+<Column name="phone" id="F414F389-B912-EED7-035B-D08C92220181">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:14:20 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0983B5C2-68A6-E4F8-D0ED-D94A25CADBC2" referredColumn="2C0FED69-C12A-178F-363C-18EAD61584C2"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="099FDA07-B2B9-510B-1CFE-3CF75529FAA5" name="TB_TEST2_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:14:20 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E3CB1F2-2D3B-06A2-AB4F-1742C1DA64A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="72A40517-921F-59FB-9C60-E3150F04B394" name="TB_TEST2_TB_TEST1_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:37:54 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2CC5A903-963C-8B88-8762-758965B8192B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="50D06931-B27B-1A32-52B2-C08E4DCCB0CD" name="TB_TEST2_TB_TEST3_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-15 02:40:37 UTC</createdTime>
+<ownerDesignName>ERDTEST1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F414F389-B912-EED7-035B-D08C92220181"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
