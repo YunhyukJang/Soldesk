@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="50993416-155D-CB77-105D-C9E2BE76E003" name="고객">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 00:57:14 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="고객번호" id="89C422C3-3767-A01F-32F4-4F670B07E11D">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:00:10 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="이름" id="15DAE225-B95A-28A1-38E6-65A0EED9683E">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 00:59:21 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="주소" id="1E251886-1625-3934-B6AC-EF001369B412">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 00:59:21 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="전화번호" id="ED24859C-C1C8-2A85-0BDE-D756928B72C4">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 00:59:21 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4D1617D5-85F9-6AE5-7D7B-AFF574E9EF49" name="고객_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:00:10 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89C422C3-3767-A01F-32F4-4F670B07E11D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

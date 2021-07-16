@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7D67D636-588A-5D8A-0D07-7334D31043AB" name="투숙">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:01:56 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<ordsAlias>table_5</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="호텔주소" id="BA1D85E5-68C9-940C-9EAE-76241B598BF2">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:05:54 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객번호" id="40E75A8C-9D68-2B06-DD35-02758D4CF7CB">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:05:54 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="실제 도착일" id="3613312B-07BA-F4F9-240A-90B115313825">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:06:36 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="실제 출발일" id="E4E4F85A-CCFE-30A3-E5FA-9E6C6281DEF7">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:06:36 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="선급금" id="B671991D-E6E3-07C2-A559-A07D99CF54E3">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:07:22 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="지불방법" id="74AE91FD-1F11-C656-F965-95C0ED9E115E">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:07:22 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6AC11760-5DE2-F017-C3DA-15B8F0FD8B21" name="투숙_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:05:54 UTC</createdTime>
+<ownerDesignName>Hotel_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA1D85E5-68C9-940C-9EAE-76241B598BF2"/>
+<colUsage columnID="40E75A8C-9D68-2B06-DD35-02758D4CF7CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
