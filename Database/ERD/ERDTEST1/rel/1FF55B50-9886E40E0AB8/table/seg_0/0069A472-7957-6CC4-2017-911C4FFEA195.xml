@@ -15,7 +15,6 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>20</dataTypePrecision>
 <ownDataTypeParameters>,20,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
@@ -26,7 +25,6 @@
 <ownerDesignName>ERDTEST1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>20</dataTypePrecision>
 <ownDataTypeParameters>,20,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
