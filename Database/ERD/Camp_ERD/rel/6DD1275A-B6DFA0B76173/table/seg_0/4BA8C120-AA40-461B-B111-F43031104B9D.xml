@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4BA8C120-AA40-461B-B111-F43031104B9D" name="고객">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:58:21 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<ordsAlias>table_6</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="운전면허증" id="EEC5356C-34A7-F9CD-3B5E-C1079214FA27">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객명" id="3F369A72-752B-359E-94ED-0809025B8899">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객 주소" id="8DFF2E44-51E4-90B7-E31F-E40C94BC17EA">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객 전화번호" id="FCC878BE-D20C-2480-70E9-ED07AD46060B">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="고객 이메일" id="7FB5CA01-7C12-A681-CB2B-A9D095E0F706">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3A3D982-3712-66CE-5CFF-910DD940C915" name="고객_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:59:17 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EEC5356C-34A7-F9CD-3B5E-C1079214FA27"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

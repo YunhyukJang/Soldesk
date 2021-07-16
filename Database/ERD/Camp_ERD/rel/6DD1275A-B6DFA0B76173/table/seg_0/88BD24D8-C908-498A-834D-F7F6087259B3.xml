@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="88BD24D8-C908-498A-834D-F7F6087259B3" name="캠핑카 대여">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:49:22 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<ordsAlias>table_2</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="대여번호" id="263C52BB-3B81-028F-6574-0D5ABB4F9CDC">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="캠핑카 등록ID" id="CE7336E6-B61A-C45F-356D-CE977CBC9BFC">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="운전면허증 번호" id="F37A269E-CB76-72E7-B93D-56112F93458E">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="캠핑카 대여회사ID" id="13A5DCD8-35B4-D2FC-BFC6-258C46CF5821">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="대여 시작일" id="0EAD95B8-F3CC-3578-4523-E678F4FDD0C7">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="대여 기간" id="9EE21F18-814F-D5E1-0CFA-99F8B0E7AE98">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="청구 요금" id="4D32441A-49CF-0D77-ACDB-5867994DDDF5">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>20</dataTypePrecision>
+<ownDataTypeParameters>,20,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="납입 기한" id="A36F1EC3-708D-4930-30E7-515DD328DBCB">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="캠핑카 대여회사_캠핑카 대여회사ID" id="F09E32BE-02FD-6EDB-532A-5E9ABB4416F1">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 02:00:44 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="007FB2C1-9D48-98F0-45ED-17A7BCE366DA" referredColumn="08B5BFE1-A3F2-97BD-A15C-81507E54C017"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="175FCD13-E530-CC5B-7BCE-1E71DD06FE6A" name="캠핑카 대여_PK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 01:52:02 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="263C52BB-3B81-028F-6574-0D5ABB4F9CDC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5463F480-41D6-1B27-7A29-2FC8590C5A54" name="캠핑카 대여_캠핑카 대여회사_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 02:00:44 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F09E32BE-02FD-6EDB-532A-5E9ABB4416F1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

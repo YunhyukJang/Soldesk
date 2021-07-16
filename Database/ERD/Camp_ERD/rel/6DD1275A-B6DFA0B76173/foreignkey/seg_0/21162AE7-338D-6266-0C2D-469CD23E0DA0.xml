@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="21162AE7-338D-6266-0C2D-469CD23E0DA0" containerWithKeyObject="A902BE95-BA9E-5E7E-D7C5-1BD96DD72624" localFKIndex="22F2641E-29A2-05F3-35BA-17F1EA66227A" name="캠핑카 정비소정보_캠핑카_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-16 02:07:42 UTC</createdTime>
+<ownerDesignName>Camp_ERD</ownerDesignName>
+<referredTableLongName>캠핑카</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>58B4EB06-48A6-BD9A-2A38-2497ED1F057A</referredTableID>
+<keyObject>99242570-7402-2A85-8A2F-8370A3E0A0B0</keyObject>
+<referredKeyID>99242570-7402-2A85-8A2F-8370A3E0A0B0</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>캠핑카 등록ID,캠핑카 대여회사ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
