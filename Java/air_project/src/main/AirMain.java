@@ -1,12 +1,15 @@
 package main;
 
+import java.awt.Frame;
+
 import frame.FrameBase;
 import frame.FrameGuam;
-import frame.FrameTokyo;
 
 public class AirMain {
 
 	public static void main(String[] args) {
-		FrameBase.getInstance(new FrameGuam());
+		FrameGuam guam=new FrameGuam();
+		
+		FrameBase.getInstance(guam);
 	}
 }

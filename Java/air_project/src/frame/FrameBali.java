@@ -13,62 +13,46 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import vo.MyPlace;
-import vo.Place;
-import vo.PlaceDAO;
-
-public class FrameGuam extends JPanel {
+public class FrameBali extends JPanel {
 	private Image backImg;
 	
-	public FrameGuam() {
-		Place sf=new PlaceDAO().searchPlace("괌");
-		
-		FrameBase.getInstance(new FrameGuam(sf));
-	}
-	
-	public FrameGuam(Place p) {
+	public FrameBali() {
 		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconGuam=new ImageIcon("괌.jpg");
-		JLabel imgGuam=new JLabel(iconGuam);
+		ImageIcon iconBali=new ImageIcon("발리.jpg");
+		JLabel imgBali=new JLabel(iconBali);
 		
-		imgGuam.setBounds(17, 12, 550, 355);
+		imgBali.setBounds(17, 12, 550, 355);
 		
-		add(imgGuam);
+		add(imgBali);
 		
 		//여행지 정보 TextArea
-		JLabel pName=new JLabel(p.getpName());
-		
-		pName.setBounds(18, 390, 380, 40);
-		pName.setOpaque(true);
-		pName.setBackground(new Color(0xF6F6F6));
-		pName.setFont(new Font("나눔고딕코딩", Font.PLAIN, 30));
-		
-		add(pName);
-		
-		TextArea infoGuam=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n"+p.getpPrice()+" 원\n"+"\n추천 여행 기간 : "
-		+p.getrPeriod()+"\n\n"+p.getrInfo(), 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-		
-		infoGuam.setSize(385, 280);
-		infoGuam.setLocation(15, 380);
-		infoGuam.setBackground(new Color(0xF6F6F6));
-		infoGuam.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
+		TextArea infoBali=new TextArea("발리"+"\n\n세계 최고의 휴양지, 세계 1위의 허니문 여행지 신들의 섬 발리\n"+"\n700,000 원\n"
+		+"\n추천 여행 기간 : 5월~9월\n\n세계 1등 휴양지인 발리는 7월 8월이 최성수기이고 4월부터 10월까지 건기인 시기에 찾는 것이 여행하기 좋다. "
+		+ "발리는 지역마다 고도가 달라 평균날씨도 다르지만 평균 32.4℃이며 3월에 가장 높고 평균온도가 29.6℃로 8월에 가장 낮다. 4월부터 10월까지 "
+		+ "건기이며 11월부터 3월까지 우기이다. 1월과 2월에 비가 가장 많이 오며, 동남아시아의 전형적인 스콜성 비입니다.", 
+		0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+			
+		infoBali.setSize(400, 280);
+		infoBali.setLocation(0, 380);
+		infoBali.setBackground(new Color(0xF6F6F6));
+		infoBali.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
-		add(infoGuam);
+		add(infoBali);
 		
 		//월 선택
-		PlaceDAO pDAO=new PlaceDAO();
-		
 		Choice tMonth=new Choice();
+		String monthSlot[]={"월 선택", 
+				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
+				"10월", "11월", "12월"};
 		
-		for(int i=0; i<pDAO.monthSlot.length; i++) {
-			tMonth.add(pDAO.monthSlot[i]);
+		for(int i=0; i<monthSlot.length; i++) {
+			tMonth.add(monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -79,9 +63,14 @@ public class FrameGuam extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
+		String dateSlot[]={"일 선택", 
+				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
+				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
+				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
+				"29일", "30일", "31일"};
 				
-		for(int i=0; i<pDAO.dateSlot.length; i++) {
-			tDate.add(pDAO.dateSlot[i]);
+		for(int i=0; i<dateSlot.length; i++) {
+			tDate.add(dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -92,9 +81,15 @@ public class FrameGuam extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
+		String timeSlot[]={"시간대 선택", 
+				"00:00", "02:30", 
+				"05:00", "07:30", 
+				"09:00", "11:30", 
+				"14:00", "16:30", 
+				"19:00", "21:30"};
 				
-		for(int i=0; i<pDAO.timeSlot.length; i++) {
-			tTime.add(pDAO.timeSlot[i]);
+		for(int i=0; i<timeSlot.length; i++) {
+			tTime.add(timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -105,9 +100,10 @@ public class FrameGuam extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
+		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<pDAO.clientSlot.length; i++) {
-			tClient.add(pDAO.clientSlot[i]);
+		for(int i=0; i<clientSlot.length; i++) {
+			tClient.add(clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -127,26 +123,7 @@ public class FrameGuam extends JPanel {
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MyPlace mp=new MyPlace();
-				
-				mp.setpName(p.getpName());
-				mp.setMonth(tMonth.getSelectedItem());
-				mp.setDate(tDate.getSelectedItem());
-				mp.setTime(tTime.getSelectedItem());
-				mp.setClient(tClient.getSelectedItem());
-				
-				if(tMonth.getSelectedItem().equals("월 선택")) {
-					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
-				}else if(tDate.getSelectedItem().equals("일 선택")) {
-					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
-				}else if(tTime.getSelectedItem().equals("시간 선택")) {
-					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
-				}else if(tClient.getSelectedItem().equals("인원 선택")) {
-					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
-				}else {
-					//FrameBase.getInstance(new FrameTourSeat());
-				}
-				
+				//좌석 선택 기능 구현 예정
 			}
 			
 		});
@@ -164,7 +141,7 @@ public class FrameGuam extends JPanel {
 		btnBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "첫 번째 페이지입니다.");
+				FrameBase.getInstance(new FrameLA());
 			}
 					
 		});
@@ -172,10 +149,9 @@ public class FrameGuam extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
-
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));		
+		btnHome.setBackground(new Color(0xF6F6F6));
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
@@ -201,12 +177,12 @@ public class FrameGuam extends JPanel {
 		btnNext.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				FrameBase.getInstance(new FrameTokyo());
+				FrameBase.getInstance(new FrameAuckland());
 			}
 					
 		});
 				
-		add(btnNext);	
+		add(btnNext);
 	}
 	
 	public void paintComponent(Graphics g) {

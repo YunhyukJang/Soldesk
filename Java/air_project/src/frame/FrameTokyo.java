@@ -3,7 +3,10 @@ package frame;
 import java.awt.Choice;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.TextArea;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,8 +16,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class FrameTokyo extends JPanel {
+	private Image backImg;
+	
 	public FrameTokyo() {
-		setBackground(new Color(0xB2EBF4));
+		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		
 		setLayout(null);
 		setSize(600, 800);
 		
@@ -26,15 +32,15 @@ public class FrameTokyo extends JPanel {
 		add(imgTokyo);
 		
 		//여행지 정보 TextArea
-		TextArea infoTokyo=new TextArea("도쿄"+"\n\n신구의 조화가 절묘한 도시\n"+"\n680,000 원\n"+"\n추천 여행 기간:10월~11월\n\n"
-				+"낮에는 따뜻하고 밤에는 선선해 걸어 다니기 좋다. 이 즈음 청명한 날씨가 이어진다. 평균 기온이 16C 정도로 "
+		TextArea infoTokyo=new TextArea("도쿄"+"\n\n신구의 조화가 절묘한 도시\n"+"\n680,000 원\n"+"\n추천 여행 기간 : 10월~11월\n\n"
+				+"낮에는 따뜻하고 밤에는 선선해 걸어 다니기 좋다. 이 즈음 청명한 날씨가 이어진다. 평균 기온이 16℃ 정도로 "
 				+"여름이지만 많이 덥지 않고, 한낮에도 습도가 낮아 여행하기 좋다.", 
-						0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
 			
 		infoTokyo.setSize(400, 280);
 		infoTokyo.setLocation(0, 380);
-		infoTokyo.setBackground(new Color(0xD4F4FA));
-		infoTokyo.setFont(new Font("나눔고딕코딩", Font.PLAIN, 18));
+		infoTokyo.setBackground(new Color(0xF6F6F6));
+		infoTokyo.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
 		add(infoTokyo);
 		
@@ -108,7 +114,7 @@ public class FrameTokyo extends JPanel {
 		//좌석 선택 Button
 		JButton btnSeat=new JButton("좌석 선택");
 				
-		btnSeat.setBackground(new Color(0xD4F4FA));
+		btnSeat.setBackground(new Color(0xF6F6F6));
 		btnSeat.setSize(150, 50);
 		btnSeat.setLocation(420, 600);
 		btnSeat.setFont(new Font("나눔고딕코딩", Font.BOLD, 18));
@@ -117,7 +123,6 @@ public class FrameTokyo extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				//좌석 선택 기능 구현 예정
-				//new FrameTourSeat(p);
 			}
 			
 		});
@@ -127,15 +132,15 @@ public class FrameTokyo extends JPanel {
 		//이전 페이지 Button
 		JButton btnBack=new JButton("이전 페이지");
 				
-		btnBack.setBackground(new Color(0x80F5FF));
-		btnBack.setSize(180, 70);
-		btnBack.setLocation(1, 680);
-		btnBack.setFont(new Font("나눔고딕코딩", Font.BOLD, 23));
+		btnBack.setBackground(new Color(0xF6F6F6));
+		btnBack.setSize(170, 70);
+		btnBack.setLocation(15, 680);
+		btnBack.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
 				
 		btnBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//이전 페이지 기능 구현 예정
+				FrameBase.getInstance(new FrameGuam());
 			}
 					
 		});
@@ -143,16 +148,17 @@ public class FrameTokyo extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
-		ImageIcon iconHome=new ImageIcon("홈.png");
-		JButton btnHome=new JButton(iconHome);
-				
-		btnHome.setSize(180, 70);
-		btnHome.setLocation(204, 680);
+		JButton btnHome=new JButton("H O M E");
+		
+		btnHome.setBackground(new Color(0xF6F6F6));
+		btnHome.setSize(170, 70);
+		btnHome.setLocation(208, 680);
+		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
 				
 		btnHome.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//홈 기능 구현 예정
+				//FrameBase.getInstance(new FrameBegin());
 			}
 					
 		});
@@ -162,19 +168,23 @@ public class FrameTokyo extends JPanel {
 		//다음 페이지 Button
 		JButton btnNext=new JButton("다음 페이지");
 				
-		btnNext.setBackground(new Color(0x80F5FF));
-		btnNext.setSize(180, 70);
-		btnNext.setLocation(403, 680);
-		btnNext.setFont(new Font("나눔고딕코딩", Font.BOLD, 23));
+		btnNext.setBackground(new Color(0xF6F6F6));
+		btnNext.setSize(170, 70);
+		btnNext.setLocation(400, 680);
+		btnNext.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
 				
 		btnNext.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//다음 페이지 기능 구현 예정
+				FrameBase.getInstance(new FrameLA());
 			}
 					
 		});
 				
 		add(btnNext);
+	}
+	
+	public void paintComponent(Graphics g) {
+		g.drawImage(backImg, 0, 0, getWidth(), getHeight(), this);
 	}
 }

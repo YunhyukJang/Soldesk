@@ -11,7 +11,7 @@ public class FrameBase extends JFrame {
 	public FrameBase(JPanel jp) {
 		Toolkit tk=Toolkit.getDefaultToolkit();
 		
-		setTitle("안 타면 D조 항공");
+		setTitle("in the Air");
 		setLayout(null);
 		setBounds(((int)tk.getScreenSize().getWidth())/2-300, 
 				((int)tk.getScreenSize().getHeight())/2-400, 

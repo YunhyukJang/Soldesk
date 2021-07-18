@@ -20,7 +20,7 @@ public class MovieDAO {
 	
 	//처음에 한 번만 실행하는 메서드
 	private void init() {
-		list = new ArrayList<Movie>();
+		list=new ArrayList<Movie>();
 		
 		//영화 1
 		list.add(new Movie("라라랜드", 10000, 5, 

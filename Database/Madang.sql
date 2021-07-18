@@ -5,7 +5,7 @@
 --create user madang identified by 12341234;
 
 --권한 부여
---grant connect, resource to madang;
+--grant connect, resource to madang; 
 --grant create table, create view to madang;
 
 --데이터베이스 잠금 해제

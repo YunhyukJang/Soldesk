@@ -13,62 +13,47 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import vo.MyPlace;
-import vo.Place;
-import vo.PlaceDAO;
-
-public class FrameGuam extends JPanel {
+public class FrameAuckland extends JPanel {
 	private Image backImg;
 	
-	public FrameGuam() {
-		Place sf=new PlaceDAO().searchPlace("괌");
-		
-		FrameBase.getInstance(new FrameGuam(sf));
-	}
-	
-	public FrameGuam(Place p) {
+	public FrameAuckland() {
 		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconGuam=new ImageIcon("괌.jpg");
-		JLabel imgGuam=new JLabel(iconGuam);
+		ImageIcon iconAuckland=new ImageIcon("오클랜드.jpg");
+		JLabel imgAuckland=new JLabel(iconAuckland);
 		
-		imgGuam.setBounds(17, 12, 550, 355);
+		imgAuckland.setBounds(17, 12, 550, 355);
 		
-		add(imgGuam);
+		add(imgAuckland);
 		
 		//여행지 정보 TextArea
-		JLabel pName=new JLabel(p.getpName());
-		
-		pName.setBounds(18, 390, 380, 40);
-		pName.setOpaque(true);
-		pName.setBackground(new Color(0xF6F6F6));
-		pName.setFont(new Font("나눔고딕코딩", Font.PLAIN, 30));
-		
-		add(pName);
-		
-		TextArea infoGuam=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n"+p.getpPrice()+" 원\n"+"\n추천 여행 기간 : "
-		+p.getrPeriod()+"\n\n"+p.getrInfo(), 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-		
-		infoGuam.setSize(385, 280);
-		infoGuam.setLocation(15, 380);
-		infoGuam.setBackground(new Color(0xF6F6F6));
-		infoGuam.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
+		TextArea infoAuckland=new TextArea("오클랜드"+"\n\n북섬의 북단에 위치한 수많은 인종이 함께 어울려 사는 뉴질랜드의 최대 도시이며 "
+				+"경제 중심지\n"+"\n1,670,000 원\n"+"\n추천 여행 기간 : 12월~3월\n\n이 기간에는 좋은 날씨가 지속되는 날이 많고, 기온 또한 20℃에서 "
+						+"25℃로 쾌적해서 여행하기 가장 좋다. 오클랜드는 바다를 끼고있는 해양 도시. 해수욕과 서핑 등 해양 액티비티를 즐기고자 한다면 여름철인 "
+						+"12월부터 3월이 가장 좋다. 10월과 11월도 날씨가 좋은 편이며, 수많은 철새가 오클랜드 서부의 해안에서 산란과 부화를 하는 진풍경을 "
+						+"볼 수 있어 추천하는 시즌이다. 봄에 해당하는 9월~11월도 여행하기에 나쁘지 않은 편이다.", 
+						0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+			
+		infoAuckland.setSize(400, 280);
+		infoAuckland.setLocation(0, 380);
+		infoAuckland.setBackground(new Color(0xF6F6F6));
+		infoAuckland.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
-		add(infoGuam);
+		add(infoAuckland);
 		
 		//월 선택
-		PlaceDAO pDAO=new PlaceDAO();
-		
 		Choice tMonth=new Choice();
+		String monthSlot[]={"월 선택", 
+				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
+				"10월", "11월", "12월"};
 		
-		for(int i=0; i<pDAO.monthSlot.length; i++) {
-			tMonth.add(pDAO.monthSlot[i]);
+		for(int i=0; i<monthSlot.length; i++) {
+			tMonth.add(monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -79,9 +64,14 @@ public class FrameGuam extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
+		String dateSlot[]={"일 선택", 
+				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
+				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
+				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
+				"29일", "30일", "31일"};
 				
-		for(int i=0; i<pDAO.dateSlot.length; i++) {
-			tDate.add(pDAO.dateSlot[i]);
+		for(int i=0; i<dateSlot.length; i++) {
+			tDate.add(dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -92,9 +82,15 @@ public class FrameGuam extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
+		String timeSlot[]={"시간대 선택", 
+				"00:00", "02:30", 
+				"05:00", "07:30", 
+				"09:00", "11:30", 
+				"14:00", "16:30", 
+				"19:00", "21:30"};
 				
-		for(int i=0; i<pDAO.timeSlot.length; i++) {
-			tTime.add(pDAO.timeSlot[i]);
+		for(int i=0; i<timeSlot.length; i++) {
+			tTime.add(timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -105,9 +101,10 @@ public class FrameGuam extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
+		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<pDAO.clientSlot.length; i++) {
-			tClient.add(pDAO.clientSlot[i]);
+		for(int i=0; i<clientSlot.length; i++) {
+			tClient.add(clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -127,26 +124,7 @@ public class FrameGuam extends JPanel {
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				MyPlace mp=new MyPlace();
-				
-				mp.setpName(p.getpName());
-				mp.setMonth(tMonth.getSelectedItem());
-				mp.setDate(tDate.getSelectedItem());
-				mp.setTime(tTime.getSelectedItem());
-				mp.setClient(tClient.getSelectedItem());
-				
-				if(tMonth.getSelectedItem().equals("월 선택")) {
-					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
-				}else if(tDate.getSelectedItem().equals("일 선택")) {
-					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
-				}else if(tTime.getSelectedItem().equals("시간 선택")) {
-					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
-				}else if(tClient.getSelectedItem().equals("인원 선택")) {
-					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
-				}else {
-					//FrameBase.getInstance(new FrameTourSeat());
-				}
-				
+				//좌석 선택 기능 구현 예정
 			}
 			
 		});
@@ -164,7 +142,7 @@ public class FrameGuam extends JPanel {
 		btnBack.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "첫 번째 페이지입니다.");
+				FrameBase.getInstance(new FrameBali());
 			}
 					
 		});
@@ -172,10 +150,9 @@ public class FrameGuam extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
-
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));		
+		btnHome.setBackground(new Color(0xF6F6F6));
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
@@ -201,12 +178,12 @@ public class FrameGuam extends JPanel {
 		btnNext.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				FrameBase.getInstance(new FrameTokyo());
+				FrameBase.getInstance(new FrameZurich());
 			}
 					
 		});
 				
-		add(btnNext);	
+		add(btnNext);
 	}
 	
 	public void paintComponent(Graphics g) {

@@ -1,17 +1,39 @@
 package vo;
 
 public class MyPlace {
-	String date; //예매 날짜
-	String time; //예매 시간
-	int client; //고객 인원 수
+	String pName; //여행지 이름
+	String month; //선택한 월
+	String date; //선택한 일
+	String time; //선택한 시간대
+	String client; //선택한 인원
+	String seat; //선택한 좌석
 	
-	public MyPlace() {
+	public MyPlace() {	
 	}
 	
-	public MyPlace(String date, String time, int client) {
+	public MyPlace(String pName, String month, String date, String time, String client, String seat) {
+		this.pName=pName;
+		this.month=month;
 		this.date=date;
 		this.time=time;
 		this.client=client;
+		this.seat=seat;
+	}
+
+	public String getpName() {
+		return pName;
+	}
+
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
 	}
 
 	public String getDate() {
@@ -30,11 +52,19 @@ public class MyPlace {
 		this.time = time;
 	}
 
-	public int getClient() {
+	public String getClient() {
 		return client;
 	}
 
-	public void setClient(int client) {
+	public void setClient(String client) {
 		this.client = client;
+	}
+
+	public String getSeat() {
+		return seat;
+	}
+
+	public void setSeat(String seat) {
+		this.seat = seat;
 	}
 }

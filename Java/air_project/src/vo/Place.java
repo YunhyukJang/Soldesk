@@ -1,16 +1,18 @@
 package vo;
 
 public class Place {
-	String pName; //여행지
+	String pName; //여행지 이름
 	String pInfo; //여행지 정보
-	String pPrice; //가격
-	String period; //추천 여행 기간
+	int pPrice; //여행지 티켓 가격
+	String rPeriod; //추천 여행 기간
+	String rInfo; //추천 여행 기간 정보
 	
-	public Place(String pName, String pInfo, String pPrice, String period) {
+	public Place(String pName, String pInfo, int pPrice, String rPeriod, String rInfo) {
 		this.pName=pName;
 		this.pInfo=pInfo;
 		this.pPrice=pPrice;
-		this.period=period;
+		this.rPeriod=rPeriod;
+		this.rInfo=rInfo;
 	}
 
 	public String getpName() {
@@ -29,19 +31,27 @@ public class Place {
 		this.pInfo = pInfo;
 	}
 
-	public String getpPrice() {
+	public int getpPrice() {
 		return pPrice;
 	}
 
-	public void setpPrice(String pPrice) {
+	public void setpPrice(int pPrice) {
 		this.pPrice = pPrice;
 	}
 
-	public String getPeriod() {
-		return period;
+	public String getrPeriod() {
+		return rPeriod;
 	}
 
-	public void setPeriod(String period) {
-		this.period = period;
+	public void setrPeriod(String rPeriod) {
+		this.rPeriod = rPeriod;
+	}
+
+	public String getrInfo() {
+		return rInfo;
+	}
+
+	public void setrInfo(String rInfo) {
+		this.rInfo = rInfo;
 	}
 }
