@@ -8,8 +8,8 @@ import frame.FrameGuam;
 public class AirMain {
 
 	public static void main(String[] args) {
-		FrameGuam guam=new FrameGuam();
+		FrameGuam p=new FrameGuam();
 		
-		FrameBase.getInstance(guam);
+		FrameBase.getInstance(p);
 	}
 }

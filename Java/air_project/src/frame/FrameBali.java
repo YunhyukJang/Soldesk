@@ -13,46 +13,114 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import vo.MyPlace;
+import vo.Place;
+import vo.PlaceDAO;
 
 public class FrameBali extends JPanel {
 	private Image backImg;
 	
 	public FrameBali() {
-		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		Place sf=new PlaceDAO().searchPlace("발리");
+		
+		FrameBase.getInstance(new FrameBali(sf));
+	}
+	
+	public FrameBali(Place p) {
+		backImg=Toolkit.getDefaultToolkit().getImage("비행1.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconBali=new ImageIcon("발리.jpg");
-		JLabel imgBali=new JLabel(iconBali);
+		//여행지 이미지
+		ImageIcon iconBali1=new ImageIcon("발리.jpg");
+		ImageIcon iconBali2=new ImageIcon("헤헤.jpg");
+		JButton btnBali1=new JButton(iconBali1);
+		JButton btnBali2=new JButton(iconBali2);
 		
-		imgBali.setBounds(17, 12, 550, 355);
+		btnBali1.setSize(550, 355);
+		btnBali1.setLocation(17, 12);
+		btnBali1.setRolloverSelectedIcon(iconBali1);
+		btnBali1.setBorderPainted(false);
 		
-		add(imgBali);
+		btnBali2.setSize(550, 355);
+		btnBali2.setLocation(17, 12);
+		btnBali2.setRolloverSelectedIcon(iconBali2);
+		btnBali2.setBorderPainted(false);
+		btnBali2.setVisible(false);
+		
+		btnBali1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnBali2.setVisible(true);
+				btnBali1.setVisible(false);
+			}
+			
+		});
+		
+		btnBali2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnBali1.setVisible(true);
+				btnBali2.setVisible(false);
+			}
+			
+		});
+		
+		add(btnBali1);
+		add(btnBali2);
 		
 		//여행지 정보 TextArea
-		TextArea infoBali=new TextArea("발리"+"\n\n세계 최고의 휴양지, 세계 1위의 허니문 여행지 신들의 섬 발리\n"+"\n700,000 원\n"
-		+"\n추천 여행 기간 : 5월~9월\n\n세계 1등 휴양지인 발리는 7월 8월이 최성수기이고 4월부터 10월까지 건기인 시기에 찾는 것이 여행하기 좋다. "
-		+ "발리는 지역마다 고도가 달라 평균날씨도 다르지만 평균 32.4℃이며 3월에 가장 높고 평균온도가 29.6℃로 8월에 가장 낮다. 4월부터 10월까지 "
-		+ "건기이며 11월부터 3월까지 우기이다. 1월과 2월에 비가 가장 많이 오며, 동남아시아의 전형적인 스콜성 비입니다.", 
-		0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-			
-		infoBali.setSize(400, 280);
-		infoBali.setLocation(0, 380);
+		//여행지 이름 라벨
+		JLabel pName=new JLabel(p.getpName());
+		
+		pName.setBounds(20, 388, 350, 31);
+		pName.setOpaque(true);
+		pName.setBackground(new Color(0xF6F6F6));
+		pName.setFont(new Font("나눔고딕코딩", Font.BOLD, 30));
+		
+		add(pName);
+		
+		//여행지 티켓 가격 라벨
+		JLabel pPrice=new JLabel(p.getpPrice());
+		
+		pPrice.setBounds(20, 478, 350, 26);
+		pPrice.setOpaque(true);
+		pPrice.setBackground(new Color(0xF6F6F6));
+		pPrice.setFont((new Font("나눔고딕코딩", Font.BOLD, 25)));
+		
+		add(pPrice);
+		
+		//추천 여행 기간 라벨
+		JLabel rPeriod=new JLabel(p.getrPeriod());
+		
+		rPeriod.setBounds(20, 513, 350, 21);
+		rPeriod.setOpaque(true);
+		rPeriod.setBackground(new Color(0xF6F6F6));
+		rPeriod.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		
+		add(rPeriod);
+		
+		TextArea infoBali=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n\n\n\n"+p.getrInfo(), 
+				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+		
+		infoBali.setSize(385, 280);
+		infoBali.setLocation(15, 380);
 		infoBali.setBackground(new Color(0xF6F6F6));
 		infoBali.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
 		add(infoBali);
 		
 		//월 선택
-		Choice tMonth=new Choice();
-		String monthSlot[]={"월 선택", 
-				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
-				"10월", "11월", "12월"};
+		PlaceDAO pDAO=new PlaceDAO();
 		
-		for(int i=0; i<monthSlot.length; i++) {
-			tMonth.add(monthSlot[i]);
+		Choice tMonth=new Choice();
+		
+		for(int i=0; i<pDAO.monthSlot.length; i++) {
+			tMonth.add(pDAO.monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -63,14 +131,9 @@ public class FrameBali extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
-		String dateSlot[]={"일 선택", 
-				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
-				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
-				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
-				"29일", "30일", "31일"};
 				
-		for(int i=0; i<dateSlot.length; i++) {
-			tDate.add(dateSlot[i]);
+		for(int i=0; i<pDAO.dateSlot.length; i++) {
+			tDate.add(pDAO.dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -81,15 +144,9 @@ public class FrameBali extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
-		String timeSlot[]={"시간대 선택", 
-				"00:00", "02:30", 
-				"05:00", "07:30", 
-				"09:00", "11:30", 
-				"14:00", "16:30", 
-				"19:00", "21:30"};
 				
-		for(int i=0; i<timeSlot.length; i++) {
-			tTime.add(timeSlot[i]);
+		for(int i=0; i<pDAO.timeSlot.length; i++) {
+			tTime.add(pDAO.timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -100,10 +157,9 @@ public class FrameBali extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
-		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<clientSlot.length; i++) {
-			tClient.add(clientSlot[i]);
+		for(int i=0; i<pDAO.clientSlot.length; i++) {
+			tClient.add(pDAO.clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -123,7 +179,26 @@ public class FrameBali extends JPanel {
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//좌석 선택 기능 구현 예정
+				MyPlace mp=new MyPlace();
+				
+				mp.setpName(p.getpName());
+				mp.setMonth(tMonth.getSelectedItem());
+				mp.setDate(tDate.getSelectedItem());
+				mp.setTime(tTime.getSelectedItem());
+				mp.setClient(tClient.getSelectedItem());
+				
+				if(tMonth.getSelectedItem().equals("월 선택")) {
+					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
+				}else if(tDate.getSelectedItem().equals("일 선택")) {
+					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
+				}else if(tTime.getSelectedItem().equals("시간 선택")) {
+					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
+				}else if(tClient.getSelectedItem().equals("인원 선택")) {
+					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
+				}else {
+					//FrameBase.getInstance(new FrameGuamSeat());
+				}
+				
 			}
 			
 		});
@@ -149,9 +224,10 @@ public class FrameBali extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
+
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));
+		btnHome.setBackground(new Color(0xF6F6F6));		
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
@@ -182,7 +258,7 @@ public class FrameBali extends JPanel {
 					
 		});
 				
-		add(btnNext);
+		add(btnNext);	
 	}
 	
 	public void paintComponent(Graphics g) {

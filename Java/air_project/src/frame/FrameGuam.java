@@ -30,30 +30,82 @@ public class FrameGuam extends JPanel {
 	}
 	
 	public FrameGuam(Place p) {
-		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		backImg=Toolkit.getDefaultToolkit().getImage("비행1.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconGuam=new ImageIcon("괌.jpg");
-		JLabel imgGuam=new JLabel(iconGuam);
+		//여행지 이미지
+		ImageIcon iconGuam1=new ImageIcon("괌.jpg");
+		ImageIcon iconGuam2=new ImageIcon("헤헤.jpg");
+		JButton btnGuam1=new JButton(iconGuam1);
+		JButton btnGuam2=new JButton(iconGuam2);
 		
-		imgGuam.setBounds(17, 12, 550, 355);
+		btnGuam1.setSize(550, 355);
+		btnGuam1.setLocation(17, 12);
+		btnGuam1.setRolloverSelectedIcon(iconGuam1);
+		btnGuam1.setBorderPainted(false);
 		
-		add(imgGuam);
+		btnGuam2.setSize(550, 355);
+		btnGuam2.setLocation(17, 12);
+		btnGuam2.setRolloverSelectedIcon(iconGuam2);
+		btnGuam2.setBorderPainted(false);
+		btnGuam2.setVisible(false);
+		
+		btnGuam1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnGuam2.setVisible(true);
+				btnGuam1.setVisible(false);
+			}
+			
+		});
+		
+		btnGuam2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnGuam1.setVisible(true);
+				btnGuam2.setVisible(false);
+			}
+			
+		});
+		
+		add(btnGuam1);
+		add(btnGuam2);
 		
 		//여행지 정보 TextArea
+		//여행지 이름 라벨
 		JLabel pName=new JLabel(p.getpName());
 		
-		pName.setBounds(18, 390, 380, 40);
+		pName.setBounds(20, 388, 350, 31);
 		pName.setOpaque(true);
 		pName.setBackground(new Color(0xF6F6F6));
-		pName.setFont(new Font("나눔고딕코딩", Font.PLAIN, 30));
+		pName.setFont(new Font("나눔고딕코딩", Font.BOLD, 30));
 		
 		add(pName);
 		
-		TextArea infoGuam=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n"+p.getpPrice()+" 원\n"+"\n추천 여행 기간 : "
-		+p.getrPeriod()+"\n\n"+p.getrInfo(), 0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+		//여행지 티켓 가격 라벨
+		JLabel pPrice=new JLabel(p.getpPrice());
+		
+		pPrice.setBounds(20, 493, 350, 26);
+		pPrice.setOpaque(true);
+		pPrice.setBackground(new Color(0xF6F6F6));
+		pPrice.setFont((new Font("나눔고딕코딩", Font.BOLD, 25)));
+		
+		add(pPrice);
+		
+		//추천 여행 기간 라벨
+		JLabel rPeriod=new JLabel(p.getrPeriod());
+		
+		rPeriod.setBounds(20, 528, 350, 21);
+		rPeriod.setOpaque(true);
+		rPeriod.setBackground(new Color(0xF6F6F6));
+		rPeriod.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		
+		add(rPeriod);
+		
+		TextArea infoGuam=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n\n\n\n"+p.getrInfo(), 
+				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
 		
 		infoGuam.setSize(385, 280);
 		infoGuam.setLocation(15, 380);
@@ -144,7 +196,7 @@ public class FrameGuam extends JPanel {
 				}else if(tClient.getSelectedItem().equals("인원 선택")) {
 					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
 				}else {
-					//FrameBase.getInstance(new FrameTourSeat());
+					//FrameBase.getInstance(new FrameGuamSeat());
 				}
 				
 			}

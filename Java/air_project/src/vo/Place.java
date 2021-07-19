@@ -3,11 +3,11 @@ package vo;
 public class Place {
 	String pName; //여행지 이름
 	String pInfo; //여행지 정보
-	int pPrice; //여행지 티켓 가격
+	String pPrice; //여행지 티켓 가격
 	String rPeriod; //추천 여행 기간
 	String rInfo; //추천 여행 기간 정보
 	
-	public Place(String pName, String pInfo, int pPrice, String rPeriod, String rInfo) {
+	public Place(String pName, String pInfo, String pPrice, String rPeriod, String rInfo) {
 		this.pName=pName;
 		this.pInfo=pInfo;
 		this.pPrice=pPrice;
@@ -31,11 +31,11 @@ public class Place {
 		this.pInfo = pInfo;
 	}
 
-	public int getpPrice() {
+	public String getpPrice() {
 		return pPrice;
 	}
 
-	public void setpPrice(int pPrice) {
+	public void setpPrice(String pPrice) {
 		this.pPrice = pPrice;
 	}
 

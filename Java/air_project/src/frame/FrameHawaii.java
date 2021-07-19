@@ -16,44 +16,111 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import vo.MyPlace;
+import vo.Place;
+import vo.PlaceDAO;
+
 public class FrameHawaii extends JPanel {
 	private Image backImg;
 	
 	public FrameHawaii() {
-		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		Place sf=new PlaceDAO().searchPlace("하와이");
+		
+		FrameBase.getInstance(new FrameHawaii(sf));
+	}
+	
+	public FrameHawaii(Place p) {
+		backImg=Toolkit.getDefaultToolkit().getImage("비행1.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconHawaii=new ImageIcon("하와이.jpg");
-		JLabel imgHawaii=new JLabel(iconHawaii);
+		//여행지 이미지
+		ImageIcon iconHawaii1=new ImageIcon("하와이.jpg");
+		ImageIcon iconHawaii2=new ImageIcon("헤헤.jpg");
+		JButton btnHawaii1=new JButton(iconHawaii1);
+		JButton btnHawaii2=new JButton(iconHawaii2);
 		
-		imgHawaii.setBounds(17, 12, 550, 355);
+		btnHawaii1.setSize(550, 355);
+		btnHawaii1.setLocation(17, 12);
+		btnHawaii1.setRolloverSelectedIcon(iconHawaii1);
+		btnHawaii1.setBorderPainted(false);
 		
-		add(imgHawaii);
+		btnHawaii2.setSize(550, 355);
+		btnHawaii2.setLocation(17, 12);
+		btnHawaii2.setRolloverSelectedIcon(iconHawaii2);
+		btnHawaii2.setBorderPainted(false);
+		btnHawaii2.setVisible(false);
+		
+		btnHawaii1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnHawaii2.setVisible(true);
+				btnHawaii1.setVisible(false);
+			}
+			
+		});
+		
+		btnHawaii2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnHawaii1.setVisible(true);
+				btnHawaii2.setVisible(false);
+			}
+			
+		});
+		
+		add(btnHawaii1);
+		add(btnHawaii2);
 		
 		//여행지 정보 TextArea
-		TextArea infoHawaii=new TextArea("하와이"+"\n\n미국의 50번째 주로 태평양의 낙원이라 일컬어진다.\n"
-		+"\n2,981,200 원\n"+"\n추천 여행 기간 : 4월~6월\n\n하와이는 연중 온화한 날씨로 사계절 언제 방문해도 좋은 휴양지다. "
-				+"단 비가 많이 내리는 우기를 피하고 싶다면 강수량이 가장 적은 4월부터 6월까지가 오아후를 여행하기 가장 좋은 시기 "
-				+"물놀이가 여행의 주목적이라면 우기인 11월부터 3월까지는 피하는 것이 좋다. 특히 연중 가장 많은 비가 내리는 11월을 조심할 것", 
+		//여행지 이름 라벨
+		JLabel pName=new JLabel(p.getpName());
+		
+		pName.setBounds(20, 388, 350, 31);
+		pName.setOpaque(true);
+		pName.setBackground(new Color(0xF6F6F6));
+		pName.setFont(new Font("나눔고딕코딩", Font.BOLD, 30));
+		
+		add(pName);
+		
+		//여행지 티켓 가격 라벨
+		JLabel pPrice=new JLabel(p.getpPrice());
+		
+		pPrice.setBounds(20, 478, 350, 26);
+		pPrice.setOpaque(true);
+		pPrice.setBackground(new Color(0xF6F6F6));
+		pPrice.setFont((new Font("나눔고딕코딩", Font.BOLD, 25)));
+		
+		add(pPrice);
+		
+		//추천 여행 기간 라벨
+		JLabel rPeriod=new JLabel(p.getrPeriod());
+		
+		rPeriod.setBounds(20, 513, 350, 21);
+		rPeriod.setOpaque(true);
+		rPeriod.setBackground(new Color(0xF6F6F6));
+		rPeriod.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		
+		add(rPeriod);
+		
+		TextArea infoHawaii=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n\n\n\n"+p.getrInfo(), 
 				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-			
-		infoHawaii.setSize(400, 280);
-		infoHawaii.setLocation(0, 380);
+		
+		infoHawaii.setSize(385, 280);
+		infoHawaii.setLocation(15, 380);
 		infoHawaii.setBackground(new Color(0xF6F6F6));
 		infoHawaii.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
 		add(infoHawaii);
 		
 		//월 선택
-		Choice tMonth=new Choice();
-		String monthSlot[]={"월 선택", 
-				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
-				"10월", "11월", "12월"};
+		PlaceDAO pDAO=new PlaceDAO();
 		
-		for(int i=0; i<monthSlot.length; i++) {
-			tMonth.add(monthSlot[i]);
+		Choice tMonth=new Choice();
+		
+		for(int i=0; i<pDAO.monthSlot.length; i++) {
+			tMonth.add(pDAO.monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -64,14 +131,9 @@ public class FrameHawaii extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
-		String dateSlot[]={"일 선택", 
-				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
-				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
-				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
-				"29일", "30일", "31일"};
 				
-		for(int i=0; i<dateSlot.length; i++) {
-			tDate.add(dateSlot[i]);
+		for(int i=0; i<pDAO.dateSlot.length; i++) {
+			tDate.add(pDAO.dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -82,15 +144,9 @@ public class FrameHawaii extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
-		String timeSlot[]={"시간대 선택", 
-				"00:00", "02:30", 
-				"05:00", "07:30", 
-				"09:00", "11:30", 
-				"14:00", "16:30", 
-				"19:00", "21:30"};
 				
-		for(int i=0; i<timeSlot.length; i++) {
-			tTime.add(timeSlot[i]);
+		for(int i=0; i<pDAO.timeSlot.length; i++) {
+			tTime.add(pDAO.timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -101,10 +157,9 @@ public class FrameHawaii extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
-		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<clientSlot.length; i++) {
-			tClient.add(clientSlot[i]);
+		for(int i=0; i<pDAO.clientSlot.length; i++) {
+			tClient.add(pDAO.clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -124,7 +179,26 @@ public class FrameHawaii extends JPanel {
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//좌석 선택 기능 구현 예정
+				MyPlace mp=new MyPlace();
+				
+				mp.setpName(p.getpName());
+				mp.setMonth(tMonth.getSelectedItem());
+				mp.setDate(tDate.getSelectedItem());
+				mp.setTime(tTime.getSelectedItem());
+				mp.setClient(tClient.getSelectedItem());
+				
+				if(tMonth.getSelectedItem().equals("월 선택")) {
+					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
+				}else if(tDate.getSelectedItem().equals("일 선택")) {
+					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
+				}else if(tTime.getSelectedItem().equals("시간 선택")) {
+					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
+				}else if(tClient.getSelectedItem().equals("인원 선택")) {
+					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
+				}else {
+					//FrameBase.getInstance(new FrameGuamSeat());
+				}
+				
 			}
 			
 		});
@@ -150,9 +224,10 @@ public class FrameHawaii extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
+
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));
+		btnHome.setBackground(new Color(0xF6F6F6));		
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
@@ -183,7 +258,7 @@ public class FrameHawaii extends JPanel {
 					
 		});
 				
-		add(btnNext);
+		add(btnNext);	
 	}
 	
 	public void paintComponent(Graphics g) {

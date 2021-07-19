@@ -13,47 +13,114 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import vo.MyPlace;
+import vo.Place;
+import vo.PlaceDAO;
 
 public class FrameLA extends JPanel {
 	private Image backImg;
 	
 	public FrameLA() {
-		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		Place sf=new PlaceDAO().searchPlace("로스앤젤레스");
+		
+		FrameBase.getInstance(new FrameLA(sf));
+	}
+	
+	public FrameLA(Place p) {
+		backImg=Toolkit.getDefaultToolkit().getImage("비행1.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconLA=new ImageIcon("로스앤젤레스.jpg");
-		JLabel imgLA=new JLabel(iconLA);
+		//여행지 이미지
+		ImageIcon iconLA1=new ImageIcon("로스앤젤레스.jpg");
+		ImageIcon iconLA2=new ImageIcon("헤헤.jpg");
+		JButton btnLA1=new JButton(iconLA1);
+		JButton btnLA2=new JButton(iconLA2);
 		
-		imgLA.setBounds(17, 12, 550, 355);
+		btnLA1.setSize(550, 355);
+		btnLA1.setLocation(17, 12);
+		btnLA1.setRolloverSelectedIcon(iconLA1);
+		btnLA1.setBorderPainted(false);
 		
-		add(imgLA);
+		btnLA2.setSize(550, 355);
+		btnLA2.setLocation(17, 12);
+		btnLA2.setRolloverSelectedIcon(iconLA2);
+		btnLA2.setBorderPainted(false);
+		btnLA2.setVisible(false);
+		
+		btnLA1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnLA2.setVisible(true);
+				btnLA1.setVisible(false);
+			}
+			
+		});
+		
+		btnLA2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnLA1.setVisible(true);
+				btnLA2.setVisible(false);
+			}
+			
+		});
+		
+		add(btnLA1);
+		add(btnLA2);
 		
 		//여행지 정보 TextArea
-		TextArea infoLA=new TextArea("로스앤젤레스"+"\n\n미국에서 뉴욕에 이어 두 번째로 인구가 많은 도시이며 세계 영화 "
-				+"산업을 이끌어 가고 있는 할리우드가 있는 곳\n"+"\n1,810,000 원\n"+"\n추천 여행 기간 : 4월~5월 / 9월~11월\n\n"
-						+"1년 내내 방문해도 좋지만, 그래도 한여름에는 30~40℃ 이상 되는 경우도 있어 우리나라 봄 날씨 정도인 4~5월과 9~11월 "
-						+"정도가 좋겠다. 한여름 시기인 6~8월 시즌도 건조한 더위이기에 우리나라의 찜통더위와는 사뭇 다르다. 그래서 이 시기에 와도 "
-						+"바닷가 비치에서 할 수 있는 액티비티가 많아서, 바다를 하거나 서핑 등 물에서 하는 액티비티를 좋아한다면 여름도 좋다.", 
-						0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-			
-		infoLA.setSize(400, 280);
-		infoLA.setLocation(0, 380);
+		//여행지 이름 라벨
+		JLabel pName=new JLabel(p.getpName());
+		
+		pName.setBounds(20, 388, 350, 31);
+		pName.setOpaque(true);
+		pName.setBackground(new Color(0xF6F6F6));
+		pName.setFont(new Font("나눔고딕코딩", Font.BOLD, 30));
+		
+		add(pName);
+		
+		//여행지 티켓 가격 라벨
+		JLabel pPrice=new JLabel(p.getpPrice());
+		
+		pPrice.setBounds(20, 493, 350, 26);
+		pPrice.setOpaque(true);
+		pPrice.setBackground(new Color(0xF6F6F6));
+		pPrice.setFont((new Font("나눔고딕코딩", Font.BOLD, 25)));
+		
+		add(pPrice);
+		
+		//추천 여행 기간 라벨
+		JLabel rPeriod=new JLabel(p.getrPeriod());
+		
+		rPeriod.setBounds(20, 528, 350, 21);
+		rPeriod.setOpaque(true);
+		rPeriod.setBackground(new Color(0xF6F6F6));
+		rPeriod.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		
+		add(rPeriod);
+		
+		TextArea infoLA=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n\n\n\n"+p.getrInfo(), 
+				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
+		
+		infoLA.setSize(385, 280);
+		infoLA.setLocation(15, 380);
 		infoLA.setBackground(new Color(0xF6F6F6));
 		infoLA.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
 		add(infoLA);
 		
 		//월 선택
-		Choice tMonth=new Choice();
-		String monthSlot[]={"월 선택", 
-				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
-				"10월", "11월", "12월"};
+		PlaceDAO pDAO=new PlaceDAO();
 		
-		for(int i=0; i<monthSlot.length; i++) {
-			tMonth.add(monthSlot[i]);
+		Choice tMonth=new Choice();
+		
+		for(int i=0; i<pDAO.monthSlot.length; i++) {
+			tMonth.add(pDAO.monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -64,14 +131,9 @@ public class FrameLA extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
-		String dateSlot[]={"일 선택", 
-				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
-				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
-				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
-				"29일", "30일", "31일"};
 				
-		for(int i=0; i<dateSlot.length; i++) {
-			tDate.add(dateSlot[i]);
+		for(int i=0; i<pDAO.dateSlot.length; i++) {
+			tDate.add(pDAO.dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -82,15 +144,9 @@ public class FrameLA extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
-		String timeSlot[]={"시간대 선택", 
-				"00:00", "02:30", 
-				"05:00", "07:30", 
-				"09:00", "11:30", 
-				"14:00", "16:30", 
-				"19:00", "21:30"};
 				
-		for(int i=0; i<timeSlot.length; i++) {
-			tTime.add(timeSlot[i]);
+		for(int i=0; i<pDAO.timeSlot.length; i++) {
+			tTime.add(pDAO.timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -101,10 +157,9 @@ public class FrameLA extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
-		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<clientSlot.length; i++) {
-			tClient.add(clientSlot[i]);
+		for(int i=0; i<pDAO.clientSlot.length; i++) {
+			tClient.add(pDAO.clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -124,7 +179,26 @@ public class FrameLA extends JPanel {
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//좌석 선택 기능 구현 예정
+				MyPlace mp=new MyPlace();
+				
+				mp.setpName(p.getpName());
+				mp.setMonth(tMonth.getSelectedItem());
+				mp.setDate(tDate.getSelectedItem());
+				mp.setTime(tTime.getSelectedItem());
+				mp.setClient(tClient.getSelectedItem());
+				
+				if(tMonth.getSelectedItem().equals("월 선택")) {
+					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
+				}else if(tDate.getSelectedItem().equals("일 선택")) {
+					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
+				}else if(tTime.getSelectedItem().equals("시간 선택")) {
+					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
+				}else if(tClient.getSelectedItem().equals("인원 선택")) {
+					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
+				}else {
+					//FrameBase.getInstance(new FrameGuamSeat());
+				}
+				
 			}
 			
 		});
@@ -150,9 +224,10 @@ public class FrameLA extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
+
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));
+		btnHome.setBackground(new Color(0xF6F6F6));		
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
@@ -183,7 +258,7 @@ public class FrameLA extends JPanel {
 					
 		});
 				
-		add(btnNext);
+		add(btnNext);	
 	}
 	
 	public void paintComponent(Graphics g) {

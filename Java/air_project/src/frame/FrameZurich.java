@@ -13,45 +13,114 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import vo.MyPlace;
+import vo.Place;
+import vo.PlaceDAO;
 
 public class FrameZurich extends JPanel {
 	private Image backImg;
 	
 	public FrameZurich() {
-		backImg=Toolkit.getDefaultToolkit().getImage("비행.jpg");
+		Place sf=new PlaceDAO().searchPlace("취리히");
+		
+		FrameBase.getInstance(new FrameZurich(sf));
+	}
+	
+	public FrameZurich(Place p) {
+		backImg=Toolkit.getDefaultToolkit().getImage("비행2.jpg");
 		
 		setLayout(null);
 		setSize(600, 800);
 		
-		ImageIcon iconZurich=new ImageIcon("취리히.jpg");
-		JLabel imgZurich=new JLabel(iconZurich);
+		//여행지 이미지
+		ImageIcon iconZurich1=new ImageIcon("취리히.jpg");
+		ImageIcon iconZurich2=new ImageIcon("헤헤.jpg");
+		JButton btnZurich1=new JButton(iconZurich1);
+		JButton btnZurich2=new JButton(iconZurich2);
 		
-		imgZurich.setBounds(17, 12, 550, 355);
+		btnZurich1.setSize(550, 355);
+		btnZurich1.setLocation(17, 12);
+		btnZurich1.setRolloverSelectedIcon(iconZurich1);
+		btnZurich1.setBorderPainted(false);
 		
-		add(imgZurich);
+		btnZurich2.setSize(550, 355);
+		btnZurich2.setLocation(17, 12);
+		btnZurich2.setRolloverSelectedIcon(iconZurich2);
+		btnZurich2.setBorderPainted(false);
+		btnZurich2.setVisible(false);
+		
+		btnZurich1.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnZurich2.setVisible(true);
+				btnZurich1.setVisible(false);
+			}
+			
+		});
+		
+		btnZurich2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnZurich1.setVisible(true);
+				btnZurich2.setVisible(false);
+			}
+			
+		});
+		
+		add(btnZurich1);
+		add(btnZurich2);
 		
 		//여행지 정보 TextArea
-		TextArea infoZurich=new TextArea("취리히"+"\n\n취리히는 스위스 최대의 도시이자 풍요롭고 활기찬 도시, 경제 문화의 중심이다.\n"
-		+"\n657,400 원\n"+"\n추천 여행 기간 : 연중 내내\n\n여름은 더워도 습하지 않고 겨울에도 지나치게 춥지 않다. 기본적으로 여름에는 덥고 건조, "
-				+"겨울에는 춥고 눈이 많이 오는 기후지만, 수시로 날씨가 바뀌기 때문에 그에 대비한 준비를 철저히 해야 한다.", 
+		//여행지 이름 라벨
+		JLabel pName=new JLabel(p.getpName());
+		
+		pName.setBounds(20, 388, 350, 31);
+		pName.setOpaque(true);
+		pName.setBackground(new Color(0xF6F6F6));
+		pName.setFont(new Font("나눔고딕코딩", Font.BOLD, 30));
+		
+		add(pName);
+		
+		//여행지 티켓 가격 라벨
+		JLabel pPrice=new JLabel(p.getpPrice());
+		
+		pPrice.setBounds(20, 478, 350, 26);
+		pPrice.setOpaque(true);
+		pPrice.setBackground(new Color(0xF6F6F6));
+		pPrice.setFont((new Font("나눔고딕코딩", Font.BOLD, 25)));
+		
+		add(pPrice);
+		
+		//추천 여행 기간 라벨
+		JLabel rPeriod=new JLabel(p.getrPeriod());
+		
+		rPeriod.setBounds(20, 513, 350, 21);
+		rPeriod.setOpaque(true);
+		rPeriod.setBackground(new Color(0xF6F6F6));
+		rPeriod.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		
+		add(rPeriod);
+		
+		TextArea infoZurich=new TextArea("\n\n\n"+p.getpInfo()+"\n\n\n\n\n\n"+p.getrInfo(), 
 				0, 0, TextArea.SCROLLBARS_VERTICAL_ONLY);
-			
-		infoZurich.setSize(400, 280);
-		infoZurich.setLocation(0, 380);
+		
+		infoZurich.setSize(385, 280);
+		infoZurich.setLocation(15, 380);
 		infoZurich.setBackground(new Color(0xF6F6F6));
 		infoZurich.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
 				
 		add(infoZurich);
 		
 		//월 선택
-		Choice tMonth=new Choice();
-		String monthSlot[]={"월 선택", 
-				"1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", 
-				"10월", "11월", "12월"};
+		PlaceDAO pDAO=new PlaceDAO();
 		
-		for(int i=0; i<monthSlot.length; i++) {
-			tMonth.add(monthSlot[i]);
+		Choice tMonth=new Choice();
+		
+		for(int i=0; i<pDAO.monthSlot.length; i++) {
+			tMonth.add(pDAO.monthSlot[i]);
 		}
 		
 		tMonth.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -62,14 +131,9 @@ public class FrameZurich extends JPanel {
 		
 		//일 선택
 		Choice tDate=new Choice();
-		String dateSlot[]={"일 선택", 
-				"1일", "2일", "3일", "4일", "5일", "6일", "7일", "8일", "9일", "10일", 
-				"11일", "12일", "13일", "14일", "15일", "16일", "17일", "18일", "19일", 
-				"20일", "21일", "22일", "23일", "24일", "25일", "26일", "27일", "28일", 
-				"29일", "30일", "31일"};
 				
-		for(int i=0; i<dateSlot.length; i++) {
-			tDate.add(dateSlot[i]);
+		for(int i=0; i<pDAO.dateSlot.length; i++) {
+			tDate.add(pDAO.dateSlot[i]);
 		}
 				
 		tDate.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -80,15 +144,9 @@ public class FrameZurich extends JPanel {
 		
 		//시간 선택
 		Choice tTime=new Choice();
-		String timeSlot[]={"시간대 선택", 
-				"00:00", "02:30", 
-				"05:00", "07:30", 
-				"09:00", "11:30", 
-				"14:00", "16:30", 
-				"19:00", "21:30"};
 				
-		for(int i=0; i<timeSlot.length; i++) {
-			tTime.add(timeSlot[i]);
+		for(int i=0; i<pDAO.timeSlot.length; i++) {
+			tTime.add(pDAO.timeSlot[i]);
 		}
 				
 		tTime.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -99,10 +157,9 @@ public class FrameZurich extends JPanel {
 		
 		//인원 선택
 		Choice tClient=new Choice();
-		String clientSlot[]={"인원 선택", "1명", "2명", "3명", "4명", "5명"};
 				
-		for(int i=0; i<clientSlot.length; i++) {
-			tClient.add(clientSlot[i]);
+		for(int i=0; i<pDAO.clientSlot.length; i++) {
+			tClient.add(pDAO.clientSlot[i]);
 		}
 				
 		tClient.setFont(new Font("나눔고딕코딩", Font.PLAIN, 16));
@@ -114,15 +171,35 @@ public class FrameZurich extends JPanel {
 		//좌석 선택 Button
 		JButton btnSeat=new JButton("좌석 선택");
 				
-		btnSeat.setBackground(new Color(0xF6F6F6));
+		btnSeat.setBackground(new Color(0x15006F));
 		btnSeat.setSize(150, 50);
 		btnSeat.setLocation(420, 600);
 		btnSeat.setFont(new Font("나눔고딕코딩", Font.BOLD, 18));
+		btnSeat.setForeground(new Color(0xFFFFFF));
 			
 		btnSeat.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//좌석 선택 기능 구현 예정
+				MyPlace mp=new MyPlace();
+				
+				mp.setpName(p.getpName());
+				mp.setMonth(tMonth.getSelectedItem());
+				mp.setDate(tDate.getSelectedItem());
+				mp.setTime(tTime.getSelectedItem());
+				mp.setClient(tClient.getSelectedItem());
+				
+				if(tMonth.getSelectedItem().equals("월 선택")) {
+					JOptionPane.showMessageDialog(null, "월을 선택해 주세요.");
+				}else if(tDate.getSelectedItem().equals("일 선택")) {
+					JOptionPane.showMessageDialog(null, "일을 선택해 주세요.");
+				}else if(tTime.getSelectedItem().equals("시간 선택")) {
+					JOptionPane.showMessageDialog(null, "시간을 선택해 주세요.");
+				}else if(tClient.getSelectedItem().equals("인원 선택")) {
+					JOptionPane.showMessageDialog(null, "인원을 선택해 주세요.");
+				}else {
+					//FrameBase.getInstance(new FrameGuamSeat());
+				}
+				
 			}
 			
 		});
@@ -132,10 +209,11 @@ public class FrameZurich extends JPanel {
 		//이전 페이지 Button
 		JButton btnBack=new JButton("이전 페이지");
 				
-		btnBack.setBackground(new Color(0xF6F6F6));
+		btnBack.setBackground(new Color(0x15006F));
 		btnBack.setSize(170, 70);
 		btnBack.setLocation(15, 680);
 		btnBack.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		btnBack.setForeground(new Color(0xFFFFFF));
 				
 		btnBack.addActionListener(new ActionListener() {
 			@Override
@@ -148,12 +226,14 @@ public class FrameZurich extends JPanel {
 		add(btnBack);
 		
 		//홈 Button
+
 		JButton btnHome=new JButton("H O M E");
 		
-		btnHome.setBackground(new Color(0xF6F6F6));
+		btnHome.setBackground(new Color(0x15006F));		
 		btnHome.setSize(170, 70);
 		btnHome.setLocation(208, 680);
 		btnHome.setFont(new Font("나눔고딕코딩", Font.PLAIN, 20));
+		btnHome.setForeground(new Color(0xFFFFFF));
 				
 		btnHome.addActionListener(new ActionListener() {	
 			@Override
@@ -168,10 +248,11 @@ public class FrameZurich extends JPanel {
 		//다음 페이지 Button
 		JButton btnNext=new JButton("다음 페이지");
 				
-		btnNext.setBackground(new Color(0xF6F6F6));
+		btnNext.setBackground(new Color(0x15006F));
 		btnNext.setSize(170, 70);
 		btnNext.setLocation(400, 680);
 		btnNext.setFont(new Font("나눔고딕코딩", Font.BOLD, 20));
+		btnNext.setForeground(new Color(0xFFFFFF));
 				
 		btnNext.addActionListener(new ActionListener() {
 			@Override
@@ -181,7 +262,7 @@ public class FrameZurich extends JPanel {
 					
 		});
 				
-		add(btnNext);
+		add(btnNext);	
 	}
 	
 	public void paintComponent(Graphics g) {
