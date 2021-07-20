@@ -36,32 +36,42 @@ public class FrameGuam extends JPanel {
 		setSize(600, 800);
 		
 		//여행지 이미지
-		ImageIcon iconGuam1=new ImageIcon("괌.jpg");
-		ImageIcon iconGuam2=new ImageIcon("헤헤.jpg");
+		ImageIcon iconGuam1=new ImageIcon("괌1.jpg");
+		ImageIcon iconGuam2=new ImageIcon("괌2.jpg");
 		JButton btnGuam1=new JButton(iconGuam1);
 		JButton btnGuam2=new JButton(iconGuam2);
 		
-		btnGuam1.setSize(550, 355);
+		btnGuam1.setSize(550, 315);
 		btnGuam1.setLocation(17, 12);
 		btnGuam1.setRolloverSelectedIcon(iconGuam1);
 		btnGuam1.setBorderPainted(false);
 		
-		btnGuam2.setSize(550, 355);
+		btnGuam2.setSize(550, 315);
 		btnGuam2.setLocation(17, 12);
 		btnGuam2.setRolloverSelectedIcon(iconGuam2);
 		btnGuam2.setBorderPainted(false);
 		btnGuam2.setVisible(false);
 		
-		btnGuam1.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				btnGuam2.setVisible(true);
-				btnGuam1.setVisible(false);
-			}
-			
-		});
+		add(btnGuam1);
+		add(btnGuam2);
 		
-		btnGuam2.addActionListener(new ActionListener() {
+		//여행지 이미지 리스트
+		JButton btnList1=new JButton("1");
+		JButton btnList2=new JButton("2");
+		
+		btnList1.setSize(40, 40);
+		btnList1.setLocation(250, 333);
+		btnList1.setBorderPainted(false);
+		btnList1.setBackground(new Color(0xF6F6F6));
+		btnList1.setFont(new Font("나눔고딕코딩", Font.BOLD, 10));
+		
+		btnList2.setSize(40, 40);
+		btnList2.setLocation(310, 333);
+		btnList2.setBorderPainted(false);
+		btnList2.setBackground(new Color(0xF6F6F6));
+		btnList2.setFont(new Font("나눔고딕코딩", Font.BOLD, 10));
+		
+		btnList1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				btnGuam1.setVisible(true);
@@ -70,8 +80,17 @@ public class FrameGuam extends JPanel {
 			
 		});
 		
-		add(btnGuam1);
-		add(btnGuam2);
+		btnList2.addActionListener(new ActionListener() {	
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				btnGuam1.setVisible(false);
+				btnGuam2.setVisible(true);
+			}
+			
+		});
+		
+		add(btnList1);
+		add(btnList2);
 		
 		//여행지 정보 TextArea
 		//여행지 이름 라벨
