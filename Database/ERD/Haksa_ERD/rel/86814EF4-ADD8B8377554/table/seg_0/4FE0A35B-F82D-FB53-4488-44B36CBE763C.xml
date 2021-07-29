@@ -1,0 +1,198 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4FE0A35B-F82D-FB53-4488-44B36CBE763C" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="HS_STUDENTS">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>HS_STUDENTS</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="HS_STU_ID" id="B695C25B-2140-EADB-497C-A517E86656D7">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_CLASS_ID" id="396730BC-162B-4BAF-F8F8-EB100339ECC6">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_CLASS_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3EFD68C-0168-5A04-FF0F-83D309496620" referredColumn="5C7D869D-E535-5E0A-C0D9-9C45BEBB8F9C"/>
+</associations>
+</Column>
+<Column name="HS_PROF_ID" id="F38D1C75-AA01-BCEB-8927-28B9A79DD245">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_PROF_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_NAME" id="635F8CA1-BDD1-3C83-AD25-164DA8468576">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_NAME</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_NUM" id="961AD82A-2BCC-67D0-C3A1-793572E63499">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_NUM</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_ADDR" id="78D246BA-0D7A-FAB5-B52F-C2B56946BF75">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_ADDR</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_PHNUM" id="50814CCD-0CE7-099E-7B6A-70C1023EFB00">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_PHNUM</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_EMAIL" id="83CB92F7-783F-6760-FD3B-C35DB459C411">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_EMAIL</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_IMAGE" id="C4BA354E-A487-82E2-7C2B-4B509805EBF7">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_IMAGE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LogDes-1768A872-F385-FDBA-D95E-0CB63F5908E2@LOGDT10045</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HS_STU_SUB" id="742D0F24-182A-ACBB-FFC9-5D9FB82200EC">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_STUDENTS</sourceObjSchema>
+<sourceObjName>HS_STU_SUB</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 BYTE</dataTypeSize>
+<ownDataTypeParameters>3 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="27A5D2E7-64D5-C053-470D-70B0176BA7B3" name="HS_STU_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>HS_STU_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B695C25B-2140-EADB-497C-A517E86656D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9EA2BABA-BFE3-3FAA-24AA-43F7B596F0EF" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="HS_STU_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>HS_STU_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:39 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B695C25B-2140-EADB-497C-A517E86656D7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="616DF50D-F8B7-5ACC-DDC3-FF4A495EB90C" name="HS_STUDENTS_HS_CLASS_OFFICE_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:53:08 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="396730BC-162B-4BAF-F8F8-EB100339ECC6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

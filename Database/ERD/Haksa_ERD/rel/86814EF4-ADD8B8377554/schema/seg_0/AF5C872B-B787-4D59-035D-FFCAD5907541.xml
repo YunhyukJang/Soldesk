@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="U_HAKSA" directorySegmentName="seg_0" id="AF5C872B-B787-4D59-035D-FFCAD5907541">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:20 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</SchemaObject>

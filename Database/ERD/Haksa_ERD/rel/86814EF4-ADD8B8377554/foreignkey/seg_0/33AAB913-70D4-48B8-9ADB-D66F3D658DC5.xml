@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="33AAB913-70D4-48B8-9ADB-D66F3D658DC5" containerWithKeyObject="91D217D5-CF80-6F6B-52A3-037F39F6A0DA" localFKIndex="49BE9C07-E231-5D02-018F-D6C1359FDEF6" name="HS_PROFESSOR_HS_CLASS_OFFICE_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:55:16 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<referredTableLongName>U_HAKSA.HS_CLASS_OFFICE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B3F18B9F-04B7-D1CA-397E-15E502D3188D</referredTableID>
+<keyObject>8F1832DD-3BB1-6B62-E0CC-8C04ED452D53</keyObject>
+<referredKeyID>8F1832DD-3BB1-6B62-E0CC-8C04ED452D53</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>CLASS_OFF_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>5C7D869D-E535-5E0A-C0D9-9C45BEBB8F9C</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

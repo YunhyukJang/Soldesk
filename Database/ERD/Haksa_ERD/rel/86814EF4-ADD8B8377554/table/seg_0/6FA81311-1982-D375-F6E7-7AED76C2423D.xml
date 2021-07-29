@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6FA81311-1982-D375-F6E7-7AED76C2423D" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="HS_LECTURE">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>HS_LECTURE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LEC_ID" id="5392207E-E317-39AC-B9D6-26426DA2F9C0">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>LEC_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROF_ID" id="9D41B23E-6E6D-3E1C-8574-99570B87302B">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>PROF_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3633A952-A375-7899-C6EE-195730F687FE" referredColumn="7105BFF6-A457-7284-437B-E1FEE87F61DF"/>
+</associations>
+</Column>
+<Column name="LEC_NAME" id="4F4FE7F0-1016-929C-30BC-C1046CB960CC">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>LEC_NAME</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15 BYTE</dataTypeSize>
+<ownDataTypeParameters>15 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEC_ARCH_GRADE" id="5529B5F1-78F3-87FA-8F5E-78231C5DE4C6">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>LEC_ARCH_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEC_TIME" id="10478816-6693-0BCD-A931-52C5D420BB70">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>LEC_TIME</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,1,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEC_ROOM" id="6C96030B-1943-E848-C550-222CFE962F4F">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>HS_LECTURE</sourceObjSchema>
+<sourceObjName>LEC_ROOM</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:28 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CCDCA5A8-964C-2763-6D19-25341609C9B6" name="LEC_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>LEC_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:29 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5392207E-E317-39AC-B9D6-26426DA2F9C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="40CAFFC4-AA86-F141-1E73-B0A8C5A64641" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="LEC_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>LEC_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:29 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5392207E-E317-39AC-B9D6-26426DA2F9C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9CE5F914-4C46-D949-0518-068DC067C56D" name="HS_LECTURE_HS_PROFESSOR_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:59:16 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9D41B23E-6E6D-3E1C-8574-99570B87302B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

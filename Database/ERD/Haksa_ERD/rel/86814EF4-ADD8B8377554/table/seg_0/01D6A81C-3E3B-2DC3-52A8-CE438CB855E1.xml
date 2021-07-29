@@ -1,0 +1,205 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="01D6A81C-3E3B-2DC3-52A8-CE438CB855E1" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="REGIS_COURSE">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>REGIS_COURSE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="HS_STU_ID" id="94BD1393-B505-E8EF-33D1-A60CA5048223">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>HS_STU_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D91E22C9-76A4-03D8-9E02-F5263E2E980A" referredColumn="B695C25B-2140-EADB-497C-A517E86656D7"/>
+</associations>
+</Column>
+<Column name="LEC_ID" id="44727545-866A-D846-0AAA-156CA512C180">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>LEC_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6788C06D-0AA8-2727-9E9F-15BA92654FBF" referredColumn="5392207E-E317-39AC-B9D6-26426DA2F9C0"/>
+</associations>
+</Column>
+<Column name="PROF_ID" id="FC0356DC-C065-625C-7063-C21A3E5009C8">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>PROF_ID</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_ATTEN_GRADE" id="5619526C-2836-32BF-8941-787E4479BC70">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_ATTEN_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_MIDTERM_GRADE" id="39E6C642-BEAC-531D-C5BD-B8EBC994FD8F">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_MIDTERM_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_FINALTERM_GRADE" id="8CA7A4A4-3EB9-EE43-CE7E-3E1FE44FCBE3">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_FINALTERM_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_ELSE_GRADE" id="084E5DCD-BB9B-140A-AAEB-81E83285ED01">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_ELSE_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_TOTAL" id="CB1D345D-7ED0-6E4F-7C51-2C5ED3645690">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_TOTAL</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RC_AVG_GRADE" id="CE6FC544-F5B4-911E-63EF-FE07D9E87ADA">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>REGIS_COURSE</sourceObjSchema>
+<sourceObjName>RC_AVG_GRADE</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10 BYTE</dataTypeSize>
+<ownDataTypeParameters>10 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="57022889-B939-0D67-FF59-728230D0DC14" name="STU_LEC_PROF_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>STU_LEC_PROF_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FC0356DC-C065-625C-7063-C21A3E5009C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="75ECE70F-8530-4365-B629-6701451802AD" schemaObject="AF5C872B-B787-4D59-035D-FFCAD5907541" name="STU_LEC_PROF_ID_PK">
+<sourceConnName>YH_HAKSA</sourceConnName>
+<sourceObjSchema>U_HAKSA</sourceObjSchema>
+<sourceObjName>STU_LEC_PROF_ID_PK</sourceObjName>
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94BD1393-B505-E8EF-33D1-A60CA5048223"/>
+<colUsage columnID="44727545-866A-D846-0AAA-156CA512C180"/>
+<colUsage columnID="FC0356DC-C065-625C-7063-C21A3E5009C8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7D225106-4FB6-EF68-6FF5-995C225F0880" name="REGIS_COURSE_HS_STUDENTS_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 07:02:17 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94BD1393-B505-E8EF-33D1-A60CA5048223"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C832C4E7-6323-7F4A-203D-3C34DE795E1C" name="REGIS_COURSE_HS_LECTURE_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 07:02:44 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="44727545-866A-D846-0AAA-156CA512C180"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Haksa_ERD" id="399E5A4C-FB22-F60F-5CFF-321972C1847F" version="3.5">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 04:04:17 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>399E5A4C-FB22-F60F-5CFF-321972C1847F</designId>
+</OSDM_Design>

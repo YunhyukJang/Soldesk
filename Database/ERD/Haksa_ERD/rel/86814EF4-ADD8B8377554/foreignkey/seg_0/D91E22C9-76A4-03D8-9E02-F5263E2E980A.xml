@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D91E22C9-76A4-03D8-9E02-F5263E2E980A" containerWithKeyObject="01D6A81C-3E3B-2DC3-52A8-CE438CB855E1" localFKIndex="7D225106-4FB6-EF68-6FF5-995C225F0880" name="REGIS_COURSE_HS_STUDENTS_FK">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 07:02:17 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<referredTableLongName>U_HAKSA.HS_STUDENTS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4FE0A35B-F82D-FB53-4488-44B36CBE763C</referredTableID>
+<keyObject>27A5D2E7-64D5-C053-470D-70B0176BA7B3</keyObject>
+<referredKeyID>27A5D2E7-64D5-C053-470D-70B0176BA7B3</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>HS_STU_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<discriminatorColumn>B695C25B-2140-EADB-497C-A517E86656D7</discriminatorColumn>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

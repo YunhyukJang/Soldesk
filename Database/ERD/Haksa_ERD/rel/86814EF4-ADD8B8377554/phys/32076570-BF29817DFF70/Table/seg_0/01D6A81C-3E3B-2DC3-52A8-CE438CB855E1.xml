@@ -1,0 +1,96 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="REGIS_COURSE" directorySegmentName="seg_0" id="01D6A81C-3E3B-2DC3-52A8-CE438CB855E1">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<schemaObject>AF5C872B-B787-4D59-035D-FFCAD5907541</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4F7EE3A4-E145-5F95-7C0F-BFF01E6BCD55</segment>
+<tableSpace>7A4C4FC3-3DF4-9515-AFE7-76E448FABE1E</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="RC_ELSE_GRADE" id="084E5DCD-BB9B-140A-AAEB-81E83285ED01">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RC_MIDTERM_GRADE" id="39E6C642-BEAC-531D-C5BD-B8EBC994FD8F">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEC_ID" id="44727545-866A-D846-0AAA-156CA512C180">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RC_ATTEN_GRADE" id="5619526C-2836-32BF-8941-787E4479BC70">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RC_FINALTERM_GRADE" id="8CA7A4A4-3EB9-EE43-CE7E-3E1FE44FCBE3">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="HS_STU_ID" id="94BD1393-B505-E8EF-33D1-A60CA5048223">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RC_TOTAL" id="CB1D345D-7ED0-6E4F-7C51-2C5ED3645690">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="RC_AVG_GRADE" id="CE6FC544-F5B4-911E-63EF-FE07D9E87ADA">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROF_ID" id="FC0356DC-C065-625C-7063-C21A3E5009C8">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="STU_LEC_PROF_ID_PK" id="75ECE70F-8530-4365-B629-6701451802AD">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<schemaObject>AF5C872B-B787-4D59-035D-FFCAD5907541</schemaObject>
+<segment>8990D2DA-EE5C-F551-B466-91499FFFD729</segment>
+<tableSpace>7A4C4FC3-3DF4-9515-AFE7-76E448FABE1E</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="REGIS_COURSE_HS_STUDENTS_FK" id="7D225106-4FB6-EF68-6FF5-995C225F0880">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 07:02:17 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="REGIS_COURSE_HS_LECTURE_FK" id="C832C4E7-6323-7F4A-203D-3C34DE795E1C">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 07:02:44 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="STU_LEC_PROF_ID_PK" id="57022889-B939-0D67-FF59-728230D0DC14">
+<createdBy>jangy</createdBy>
+<createdTime>2021-07-29 06:01:42 UTC</createdTime>
+<ownerDesignName>Haksa_ERD</ownerDesignName>
+<segment>8990D2DA-EE5C-F551-B466-91499FFFD729</segment>
+<tableSpace>7A4C4FC3-3DF4-9515-AFE7-76E448FABE1E</tableSpace>
+<existingIndex>75ECE70F-8530-4365-B629-6701451802AD</existingIndex>
+<indexSegment>8990D2DA-EE5C-F551-B466-91499FFFD729</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
