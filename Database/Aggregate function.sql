@@ -118,7 +118,7 @@ select name, saleprice
 from customer ct left outer join orders od 
 on od.custid=ct.custid;
 
---right outer join=innerjoin
+--right outer join=inner join
 select name, saleprice 
 from customer ct right outer join orders od 
 on od.custid=ct.custid;
