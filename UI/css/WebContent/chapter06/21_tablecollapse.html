@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Table Border-Collapse</title>
+
+<style>
+td, th{
+border:2px solid black;
+}
+
+#tb1{
+border:3px solid red;
+background-color:yellow;
+border-collapse:separate;
+/* border-spacing:10px; *상하좌우 */
+border-spacing:20px 40px; /* 좌우 상하 */
+table-layout:auto;
+}
+
+#tb2{
+border:3px solid red;
+background-color:yellow;
+border-collapse:collapse;
+table-layout:auto;
+}
+</style>
+
+</head>
+<body>
+	<table style id="tb1" width="350px">
+		<tr>
+			<th>Table border-collapse</th>
+			<td>separate 적용</td>
+		</tr>
+	</table>
+	<p/>
+	
+	<table style id="tb2" width="350px">
+		<tr>
+			<th>Table border-collapse</th>
+			<td>collapse 적용</td>
+		</tr>
+	</table>
+</body>
+</html>

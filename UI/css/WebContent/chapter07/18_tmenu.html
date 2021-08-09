@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transition-Property</title>
+
+<style>
+a{
+text-decoration:none;
+color:white;
+}
+
+div{
+position:absolute;
+left:0px;
+width:80px;
+height:50px;
+background:#FF8080;
+border:1px solid red;
+transition-property:width background;
+transition-duration:2s, 2s;
+line-height:50px;
+}
+
+div:hover{
+font-size:30px;
+text-align:center;
+width:200px;
+background:#FF0000;
+transition-timing-function:linear;
+}
+</style>
+
+</head>
+<body>
+	<div style="top:50px">
+		<a href="#" target="new">HOME</a>
+	</div>
+	
+	<div style="top:100px">
+		<a href="#" target="new">ABOUT</a>
+	</div>
+	
+	<div style="top:150px">
+		<a href="#" target="new">NEWS</a>
+	</div>
+	
+	<div style="top:200px">
+		<a href="#" target="new">STUDY</a>
+	</div>
+	
+	<div style="top:250px">
+		<a href="#" target="new">CONTACT</a>
+	</div>
+</body>
+</html>

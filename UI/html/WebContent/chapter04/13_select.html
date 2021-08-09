@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Input</title>
+</head>
+<body>
+	<h3>선택사항을 직접 입력</h3>
+	<form>
+		<label>전공분야를 입력하세요.
+			<input type="text" list="majorlist" name="major">
+			<datalist id="majorlist">
+				<option value="Software">소프트웨어</option>
+				<option value="Robot">로봇</option>
+				<option value="System">시스템</option>
+				<option value="Service">서비스</option>
+				<option value="Education">교육</option>
+			</datalist>
+			<p/>
+			
+			<input type="submit" value="완료">
+			<input type="reset" value="초기화">
+		</label>
+	</form>
+</body>
+</html>
+<!-- <input>의 list 속성은 미리 정의해놓은 옵션을 <datalist>라는 요소로 명시하고 자동완성으로 선택한다. -->

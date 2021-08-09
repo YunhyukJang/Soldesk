@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Float Layout</title>
+
+<style>
+div{
+border:3px solid blue;
+}
+
+.fix{
+overflow:auto;
+}
+
+nav{
+float:left;
+width:200px;
+border:3px solid #73AD21;
+}
+
+section{
+margin-left:210px;
+border:3px solid red;
+}
+</style>
+
+</head>
+<body>
+	<div class="fix">
+		<nav>
+			<span>목차</span>
+			<ul>
+				<li>
+					<a target="_blank" href="http://www.google.com">Google</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.apple.com">Apple</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.w3.org">W3C</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.oracle.com">Oracle</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.adobe.com">Adobe</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.amazon.com">Amazon</a>
+				</li>
+				
+				<li>
+					<a target="_blank" href="http://www.Mysql.com">Mysql</a>
+				</li>
+			</ul>
+		</nav>
+		
+		<section>
+			<span>section 1</span>
+			<p>
+				Float 속성은 시멘틱 문서 구조에 유용하게 사용할 수 있다. 예를들면 nav나 aside(보조 내용이나 
+				광고를 배치하는 곳)에 float 속성을 추가하면 떠다니는 네비게이션 또는 사이드 바를 만들 수 있다.
+			</p>
+		</section>
+		
+		<section>
+			<span>section 2</span>
+			<p>
+				시멘틱 문서 구조에 float 속성을 적용할 때는 footer 부분에 적용되지 않도록 해야 한다.
+			</p>
+		</section>
+	</div>
+</body>
+</html>

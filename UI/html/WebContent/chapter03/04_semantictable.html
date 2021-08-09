@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Semantic Table</title>
+</head>
+<body>
+	<section>
+		<article>
+			<!-- summary=스크린리더 -->
+			<table border="1" summary="Semantic table 관련 요소 활용">
+				<caption>Semantic Table Tag</caption>
+				<thead>
+					<tr>
+						<th>태그명칭</th>
+						<th>설명</th>
+						<th>사용여부</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr>
+						<td>thead</td>
+						<td>표 머릿말(속성) 부분의 태그</td>
+						<td>가능</td>
+					</tr>
+					
+					<tr>
+						<td>tbody</td>
+						<td>표 본문(속성) 부분의 태그</td>
+						<td>가능</td>
+					</tr>
+					
+					<tr>
+						<td>tfoot</td>
+						<td>표 꼬릿말(속성) 부분의 태그</td>
+						<td>가능</td>
+					</tr>
+				</tbody>
+				
+				<tfoot>
+					<tr>
+						<td colspan="3">참고 사이트:http://www.w3.org/</td>
+					</tr>
+				</tfoot>
+			</table>
+		</article>
+	</section>
+</body>
+</html>
+<!-- 테이블의 각 영역(header, body, footer)을 명시하기 위해 <thead>, <tbody>, <tfoot> 사용
+<thead>요소는 <table>의 요소이다. 반드시 <caption>, <colgroup>요소 다음에 위치해야한다.
+<thead>요소는 반드시 하나 이상의 <tr>이 존재해야 한다.
+<thead>, <tbody>, <tfoot>는 웹 페이지 레이아웃에 전혀 영향을 주지 않지만 각 요소에 css 디자인을 
+사용하여 유지보수가 용이하다. -->

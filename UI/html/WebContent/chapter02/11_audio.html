@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Audio Tag</title>
+</head>
+<body>
+	<h3>오디오 반복 재생</h3>
+	<audio src="eagle.mp3" controls loop autoplay></audio>
+	
+	<h3>오디오 수동 재생</h3>
+	<audio src="bear.mp3" controls></audio>
+	
+	<h3>오디오 다중 재생</h3>
+	<audio controls>
+		<!-- 익스플로러, 크롬, 파이어폭스, 사파리 모두 가능 -->
+		<source src="chicken.mp3" type="audio/mpeg">
+		
+		<!-- 크롬, 파이어폭스 가능 -->
+		<source src="chicken.ogg" type="audio/ogg">
+		
+		<!-- 크롬, 파이어폭스 가능 -->
+		<source src="chicken.wav" type="audio/wav">
+		
+		<!-- 재생 가능한 파일이 없다면 문장 출력 -->
+		오디오 파일을 재생할 수 없습니다.
+	</audio>
+</body>
+</html>

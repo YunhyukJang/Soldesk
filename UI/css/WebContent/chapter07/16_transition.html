@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transition</title>
+
+<style>
+div{
+width:100px;
+height:50px;
+background:red;
+color:yellow;
+border:1px solid black;
+transition:width 3s;
+}
+
+div:hover{
+width:400px;
+}
+
+/* 처음부터 마지막까지 동일한 속도로 변환 */
+#div1{
+transition-timing-function:linear;
+}
+
+/* 처음에는 천천히 시작하다가 빨라지고 마지막에 다시 느려짐 */
+#div2{
+transition-timing-function:ease;
+}
+
+/* 처음에는 천천히 시작하다가 마지막에 빨라짐 */
+#div3{
+transition-timing-function:ease-in;
+}
+
+/* 처음에는 빠르게 시작하다가 마지막에 느려짐 */
+#div4{
+transition-timing-function:ease-out;
+}
+
+/* 처음과 마지막은 빠르고 중간에 정상 */
+#div5{
+transition-timing-function:ease-in-out;
+}
+</style>
+
+</head>
+<body>
+	<div id="div1" style="top:100px">linear</div>
+	<div id="div2" style="top:150px">ease</div>
+	<div id="div3" style="top:200px">ease-in</div>
+	<div id="div4" style="top:250px">ease-out</div>
+	<div id="div5" style="top:300px">ease-in-out</div>
+</body>
+</html>

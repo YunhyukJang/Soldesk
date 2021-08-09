@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sign Up</title>
+</head>
+<body>
+	<h1>회원 가입</h1>
+	<hr>
+	
+	<form>
+		<fieldset>
+			<legend>계정 정보</legend>
+			<div>
+				아이디 <input type="text" name="id" required="required" />
+			</div>
+			
+			<div>
+				비밀번호 <input type="password" name="pw" required="required" />
+			</div>
+			
+			<div>
+				비밀번호 확인 <input type="password" name="pwCheck" required="required" />
+			</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend>프로필</legend>
+			<div>
+				이름 <input type="text" name="name" required="required" />
+			</div>
+			
+			<div>
+				생년월일 <input type="number" name="birth_year" min="1900" max="2100" 
+				placeholder="년" required="required" />
+				
+				<select name="birth_month" required="required">
+					<option>월</option>
+					<option value="1">1월</option>
+					<option value="2">2월</option>
+					<option value="3">3월</option>
+					<option value="4">4월</option>
+					<option value="5">5월</option>
+					<option value="6">6월</option>
+					<option value="7">7월</option>
+					<option value="8">8월</option>
+					<option value="9">9월</option>
+					<option value="10">10월</option>
+					<option value="11">11월</option>
+					<option value="12">12월</option>	
+				</select>
+				
+				<input type="number" name="birth_day" min="1" max="31" 
+				placeholder="일" required="required" />
+			</div>
+			
+			<div>
+				성별 <input type="radio" name="gender" value="male" checked="checked" required="required" /> 남 
+				<input type="radio" name="gender" value="female" required="required" /> 여 
+				<input type="radio" name="gender" value="etc" required="required" /> 기타
+			</div>
+		</fieldset>
+		
+		<div>
+			<input type="checkbox" name="agree" required="required" /> 사이트 이용약관과 개인정보 수집 방침에 동의합니다.
+		</div>
+		
+		<div>
+			<input type="submit" value="가입하기" />
+		</div>
+	</form>
+</body>
+</html>
+<!-- required=중복값을 받지 않으므로 2번 결재가 되면 안되는 결재창 구현 중에 사용
+<label>=for 속성을 사용해서 <input>의 id 속성에 연계해서 사용 -->

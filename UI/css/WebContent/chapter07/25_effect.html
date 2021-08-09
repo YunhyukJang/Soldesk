@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Effect</title>
+
+<style>
+div{
+position:absolute;
+width:20px;
+height:20px;
+border-radius:10px;
+animation-name:bounce;
+animation-iteration-count:infinite;
+}
+
+@keyframes bounce{
+from, to{
+bottom:0px;
+animation-timing-function:ease-out;
+}
+
+50%{
+bottom:300px;
+animation-timing-function:ease-in;
+}
+}
+
+#box1{
+background:red;
+left:0px;
+bottom:0px;
+animation-duration:1s;
+}
+
+#box2{
+background:orange;
+left:20px;
+bottom:0px;
+animation-duration:2s;
+}
+
+#box3{
+background:yellow;
+left:40px;
+bottom:0px;
+animation-duration:3s;
+}
+
+#box4{
+background:green;
+left:60px;
+bottom:0px;
+animation-duration:4s;
+}
+
+#box5{
+background:blue;
+left:80px;
+bottom:0px;
+animation-duration:5s;
+}
+</style>
+
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+	<div id="box5"></div>
+</body>
+</html>

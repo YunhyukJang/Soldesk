@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Adjacent Selector</title>
+
+<style>
+h1+h2+ul{
+color:blue;
+}
+
+div+h3{
+color:red;
+}
+
+h3+p{
+color:purple;
+background-color:yellow;
+}
+</style>
+
+</head>
+<body>
+	<div>
+		<h1>인접 형제 선택자 1</h1>
+		<h2>인접 형제 선택자 2</h2>
+		<ul>목록
+			<li>자식의 자식 1</li>
+			<li>자식의 자식 2</li>
+		</ul>
+	</div>
+	<h3>Adjacent selector</h3>
+	<p>인접 선택자에 대한 스타일 적용 실습 1</p>
+	<h3>Adjacent selector</h3>
+	<p>인접 선택자에 대한 스타일 적용 실습 2</p>
+</body>
+</html>

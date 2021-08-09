@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Child Selector 1</title>
+
+<style>
+div>h3{
+color:red;
+}
+
+body>p{
+color:yellow;
+}
+
+body>h3>tel>home{
+color:blue;
+}
+
+body>h3>tel>office{
+color:white;
+background-color:gray;
+}
+</style>
+
+</head>
+<body>
+	<div>
+		<h3>Child selector 1</h3>
+	</div>
+	
+	<p>자식 선택자</p>
+	<h3>
+		<sno>12345</sno> <br>
+		<std>해리</std> <br>
+		<tel>
+			<office>02-456-7896</office> <br>
+			<home>010-4562-8965</home>
+		</tel>
+	</h3>
+</body>
+</html>

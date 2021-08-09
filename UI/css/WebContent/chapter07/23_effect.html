@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Effect</title>
+
+<style>
+div{
+width:100px;
+height:100px;
+position:absolute;
+animation-duration:5s;
+animation-timing-function:linear;
+animation-delay:2s;
+animation-iteration-count:infinite;
+animation-play-state:running; /* 애니메이션 움직임 */
+}
+
+#div1{
+background:blue;
+animation-direction:normal;
+animation-name:R-box;
+}
+
+#div2{
+background:yellow;
+animation-direction:reverse;
+animation-name:L-box;
+}
+
+@keyframes L-box{
+0%{
+left:0px;
+}
+
+50%{
+left:200px;
+}
+
+100%{
+left:0px;
+}
+}
+
+@keyframes R-box{
+0%{
+left:400px;
+}
+
+50%{
+left:200px;
+}
+
+100%{
+left:400px;
+}
+}
+</style>
+
+</head>
+<body>
+	<div id="div1">왼쪽 박스</div>
+	<div id="div2">오른쪽 박스</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Input</title>
+</head>
+<body>
+	<h3>그룹별 선택 항목 구현</h3>
+	<form>
+		<label>전공분야 선택
+			<select name="major">
+				<optgroup label="Computer">
+					<option>Software</option>
+					<option>Robot</option>
+					<option>System</option>
+				</optgroup>
+				
+				<optgroup label="Language">
+					<option selected>Korea</option>
+					<option>English</option>
+					<option>China</option>
+					<option>Germany</option>
+				</optgroup>
+				
+				<optgroup label="Business">
+					<option>Service</option>
+					<option>Education</option>
+					<option>Communication</option>
+					<option>Marketing</option>
+				</optgroup>
+			</select>
+			<p/>
+			
+			<input type="submit" value="제출">
+			<input type="reset" value="초기화">
+		</label>
+	</form>
+</body>
+</html>

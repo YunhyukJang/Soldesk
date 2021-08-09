@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Static Position</title>
+
+<style>
+body{
+font-weight:bold;
+font-size:14pt;
+}
+
+.sp1{
+position:static;
+top:100px; /* 적용되지 않음 */
+background-color:cyan;
+width:400px;
+height:50px;
+}
+
+.sp2{
+position:static;
+top:30px; /* 적용되지 않음 */
+background-color:orange;
+width:400px;
+height:50px;
+}
+
+.sp3{
+background-color:lightgreen;
+width:400px;
+height:50px;
+}
+</style>
+
+</head>
+<body>
+	<h1>Positioning style 1</h1>
+	<p class="sp1">
+		정적 위치 설정 적용 1
+	</p>
+	
+	<div class="sp2">
+		정적 위치 설정 적용 2
+	</div>
+	
+	<p class="sp3">
+		기본 위치 설정
+	</p>
+</body>
+</html>
+<!-- position은 html 요소가 위치를 결정하는 방식
+Static position=정적 위치 설정 방식으로 가장 기본적인 방식 -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pseudo Class</title>
+
+<style>
+a:link{
+color:blue;
+}
+
+a:visited{
+color:red;
+}
+
+a:hover{
+text-decoration:overline;
+}
+
+a:active{
+background-color:yellow;
+}
+
+div.d1{
+border:1px dashed red;
+width:400px;
+padding:5px;
+}
+
+div.d1:hover{
+background-color:yellow;
+}
+
+div.d2{
+border:1px dashed red;
+width:400px;
+padding:5px;
+}
+
+div.d2:hover{
+background-color:green;
+}
+</style>
+
+</head>
+<body>
+	<h2>Pseudo class</h2>
+	<p>
+		<a href="http://www.w3.org" target="_blink">W3C 방문</a>:마우스 이벤트에 따른 링크 변화
+	</p>
+	
+	<div class="d1">
+		<h3>가상 클래스 영역 1</h3>
+		마우스 위치에 따른 박스의 스타일 변화
+	</div>
+	
+	<div class="d2">
+		<h3>가상 클래스 영역 2</h3>
+		마우스 위치에 따른 박스의 스타일 변화
+	</div>
+</body>
+</html>
+<!-- :link=방문한 적이 없는 링크
+:visited=방문한 적이 있는 링크
+:hover=마우스 커서를 롤오버했을 때
+:active=마우스를 클릭했을 때
+:focus=마우스 커서가 위치에 들어갔을 때 -->
