@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Function</title>
+</head>
+<body>
+	<script>
+		function getGrade(){
+			//var kor=95; *지역변수
+			kor=95 //var 생략이 가능하지만 함수 안에서 생략하면 전역변수로 전환
+		}
+		
+		var kor=100; //전역변수
+		
+		getGrade();
+		
+		document.write("국어 점수:"+kor+"<br>");
+	</script>
+</body>
+</html>

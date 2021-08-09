@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문</title>
+</head>
+<body>
+	<script>
+		var point=93;
+		var grade="";
+		
+		if(point>100){
+			document.write("0~100 사이의 점수만 입력하세요."+"<p/>");
+		}else if(point>90){
+			grade="A";
+			
+			document.write("매우 우수"+"<p/>");
+		}else if(point>80){
+			grade="B";
+			
+			document.write("우수"+"<p/>");
+		}else if(point>70){
+			grade="C";
+			
+			document.write("보통"+"<p/>");
+		}else if(point>60){
+			grade="D";
+			
+			document.write("조금 노력이 필요"+"<p/>");
+		}else{
+			grade="F";
+			
+			document.write("많은 노력이 필요"+"<p/>");
+		}
+		
+		document.write("학생의 학점은 <b>"+grade+"</b> 입니다.");
+	</script>
+</body>
+</html>

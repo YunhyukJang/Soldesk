@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문</title>
+</head>
+<body>
+	<script>
+		var gender="F";
+		var age="32";
+		
+		if(gender == "M"){
+			if(age >= 20){
+				result="성인 남자";
+			}else{
+				result="미성인 남자";
+			}
+			
+		}else if(age >= 20){
+			result="성인 여자";
+		}else{
+			result="미성인 여자";
+		}
+		
+		document.write("당신은 "+result+"입니다. <p/>");
+	</script>
+</body>
+</html>
