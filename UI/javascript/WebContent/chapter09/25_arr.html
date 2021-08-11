@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+</head>
+<body>
+	<script>
+		var kData=['서울', '부산'];
+		var p1=kData.unshift('청주', '세종');
+		
+		document.write("데이터 -> "+p1+"<p/>");
+		document.write("배열 데이터 -> "+kData+"<p/>");
+		
+		var p2=kData.shift();
+		
+		document.write("데이터 -> "+p2+"<p/>");
+		document.write("배열 데이터 -> "+kData+"<p/>");
+	</script>
+</body>
+</html>
+<!-- unshift=맨 앞 데이터를 삽입하고 데이터의 갯수 반환
+shift=맨 앞 데이터를 삭제 -->

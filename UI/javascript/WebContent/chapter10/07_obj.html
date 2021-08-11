@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object</title>
+</head>
+<body>
+	<p>[Yuna's car]</p>
+	<p id="carname"></p>
+	<p id="carcolor"></p>
+	<p id="carspeed"></p>
+	
+	<p>[Yunhyuk's car]</p>
+	<p id="carname2"></p>
+	<p id="carcolor2"></p>
+	<p id="carspeed2"></p>
+	
+	<script>
+		function Car(name, color, speed){
+			this.name=name;
+			this.color=color;
+			this.speed=speed;
+			this.speedup=function(){
+				return this.speed+10;
+			};
+			this.speeddown=function(){
+				return this.speed-10;
+			};
+			
+		};
+		
+		var yunaCar=new Car('Sonata', 'Blue', 100);
+		var yunhyukCar=new Car('Jeep', 'Red', 70);
+		
+		//yunaCar
+		var cName=document.getElementById("carname");
+		
+		cName.textContent="자동차 이름 -> "+yunaCar.name;
+		
+		var cColor=document.getElementById("carcolor");
+		
+		cColor.textContent="자동차 색상 -> "+yunaCar.color;
+		
+		var cSpeed=document.getElementById("carspeed");
+		
+		cSpeed.textContent="자동차 속도 -> "+yunaCar.speedup();
+		
+		//yunhyukCar
+		var cName=document.getElementById("carname2");
+		
+		cName.textContent="자동차 이름 -> "+yunhyukCar.name;
+		
+		var cColor=document.getElementById("carcolor2");
+		
+		cColor.textContent="자동차 색상 -> "+yunhyukCar.color;
+		
+		var cSpeed=document.getElementById("carspeed2");
+		
+		cSpeed.textContent="자동차 속도 -> "+yunhyukCar.speedup();
+	</script>
+</body>
+</html>

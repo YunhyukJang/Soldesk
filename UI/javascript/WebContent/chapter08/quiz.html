@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Script Quiz</title>
+</head>
+<body>
+	<script>
+		var solution=10;
+		var input=prompt('숫자를 맞춰보세요~');
+		
+		console.log(input);
+		
+		if(input>solution+2){
+			alert('그것보다는 작아요');
+		}else if(input<solution-2){
+			alert('그것보다는 커요');
+		}else{
+			if(input == solution){
+				alert('정답입니다~');
+			}else{
+				alert('아까워요!');
+			}
+			
+		}
+	</script>
+</body>
+</html>

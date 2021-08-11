@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object</title>
+</head>
+<body>
+	<p id="carname"></p>
+	<p id="carcolor"></p>
+	<p id="carspeed"></p>
+	
+	<script>
+		var car=new Object();
+		
+		car.name='Sonata';
+		car.speed=100;
+		car.color='Blue';
+		car.speedup=function(){
+			return this.speed+10;
+		}
+		
+		var cName=document.getElementById("carname");
+		
+		cName.textContent="자동차 이름 -> "+car.name;
+		
+		var cColor=document.getElementById("carcolor");
+		
+		cColor.textContent="자동차 색상 -> "+car.color;
+		
+		var cSpeed=document.getElementById("carspeed");
+		
+		cSpeed.textContent="자동차 속도 -> "+car.speedup();
+	</script>
+</body>
+</html>

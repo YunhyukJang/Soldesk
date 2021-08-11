@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom</title>
+
+<script>
+function add1(){
+	var img=document.createElement('img');
+	
+	img.src='yuna.jpg';
+	img.width=250;
+	img.height=250;
+	
+	document.body.appendChild(img);
+}
+
+function add2(){
+	var img=document.createElement('img');
+	
+	img.setAttribute('src', 'yuna.jpg');
+	img.setAttribute('width', 250);
+	img.setAttribute('height', 250);
+	
+	document.body.appendChild(img);
+}
+</script>
+
+</head>
+<body>
+	<a href="#" onclick="add1()">[이미지 추가 case 1]</a>
+	<a href="#" onclick="add2()">[이미지 추가 case 2]</a>
+</body>
+</html>
+<!-- setAttribute=속성 메서드 -->

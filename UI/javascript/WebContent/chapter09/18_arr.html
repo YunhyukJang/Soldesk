@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+</head>
+<body>
+	<script>
+		var arrData=[];
+		
+		function insertArr(){ //배열 데이터 입력 함수
+			var i=0;
+			
+			for(i=0; i <= 99; i++){
+				arrData[i]=i+1; //1~100까지 저장
+				
+				document.write(arrData[i]+" "); //조회
+			}
+			
+			document.write("<p>배열 크기="+arrData.length+"</p>");
+		}
+		
+		function deleteArr(){
+			var i;
+			
+			for(i=0; i<arrData.length; i++){
+				arrData[i]=0; //배열 데이터를 0으로 초기화
+			}
+			
+			selectArr();
+		}
+		
+		function allDelData(){
+			arrData.length=0; //배열 삭제
+			
+			selectArr();
+		}
+		
+		function selectArr(){
+			var i;
+			
+			for(i=0; i<arrData.length; i++){
+				document.write(arrData[i]+" "); //조회
+			}
+			
+			document.write("<p>배열 크기="+arrData.length+"</p>");
+			document.write("<a href='18_arr.html'>이전으로</a>");
+		}
+		
+		insertArr();
+	</script>
+	
+	<p/>
+	<button type="button" onclick="deleteArr()">데이터 초기화</button>
+	<button type="button" onclick="allDelData()">데이터 삭제</button>
+</body>
+</html>

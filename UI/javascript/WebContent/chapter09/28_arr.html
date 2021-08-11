@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+</head>
+<body>
+	<script>
+		var data=[21, 42, 33, 14, 25, 12, 37, 28, 16, 11];
+		
+		function filterArr(value){
+			return value >= 18;
+		}
+		
+		var fData=data.filter(filterArr);
+		
+		document.write("배열 원본 -> "+data+"<p/>");
+		document.write("filter 메서드 적용 후 -> "+fData+"<p/>");
+	</script>
+</body>
+</html>

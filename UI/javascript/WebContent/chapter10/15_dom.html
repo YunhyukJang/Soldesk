@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom</title>
+
+<script>
+function add(){
+	var header=document.createElement('h3'); //요소 생성
+	var textNode=document.createTextNode('내 이름은 김연아입니다.'); //텍스트
+	
+	header.appendChild(textNode); //요소와 텍스트를 연결
+	document.body.appendChild(header); //body와 var header를 연결
+}
+</script>
+
+</head>
+<body>
+	<a href="#" onclick="add()">이름이 뭐에요?</a>
+</body>
+</html>

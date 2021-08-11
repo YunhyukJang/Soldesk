@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+</head>
+<body>
+	<script>
+		var kData=['서울', '부산', '청주', '대구'];
+		
+		function printArr(item, index){
+			document.write("배열 데이터["+index+"]="+item+"<br/>");
+		}
+		
+		kData.forEach(printArr);
+		
+		var nData=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		var sum=0;
+		
+		function addArr(value){
+			sum += value;
+		}
+		
+		nData.forEach(addArr);
+		
+		document.write("배열 데이터의 합="+sum+"<br/>");
+	</script>
+</body>
+</html>
+<!-- forEach=배열을 반복하며 데이터를 조회 -->

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Function</title>
+</head>
+<body>
+	<script>
+		var text1="무명 함수는 선언 전에 호출 에러";
+		var text2="무명 함수는 선언 후에 호출 가능";
+		
+		printMsg(text1); //error
+		
+		var printMsg=function (msg){ //무명 함수 선언
+			document.write("함수 호출 메시지:"+msg+"<br/>");
+		}
+		
+		printMsg(text2); //호출 가능
+	</script>
+</body>
+</html>
