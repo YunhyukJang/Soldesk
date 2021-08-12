@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+
+<style>
+.important{
+font-weight:bold;
+font-size:xx-large;
+}
+
+.blue{
+color:blue;
+}
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button.add").click(function(){
+		$("h1, h2, p").addClass("blue");
+		$("div").addClass("important");
+	});
+	
+	$("button.remove").click(function(){
+		$("h1, h2, p").removeClass("blue");
+		$("div").removeClass("important");
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<h1>HTML5</h1>
+	<h2>CSS3</h2>
+	<p>JAVASCRIPT</p>
+	<div>JQUERY</div>
+	<br/>
+	
+	<button class="add">CSS 적용</button>
+	<button class="remove">CSS 적용 해제</button>
+</body>
+</html>
+<!-- addClass=선택한 요소에 클래스 추가
+removeClass=선택한 요소의 클래스 삭제  -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+
+<style>
+div{
+width:100px;
+height:100px;
+float:left;
+margin:5px;
+background:yellow;
+}
+
+.box{
+background:red;
+}
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	var xWidth=100;
+	var yHeight=100;
+	
+	$("div").click(function(){
+		$(this).width(xWidth).addClass("box");
+		$(this).height(yHeight).addClass("box");
+		
+		xWidth=xWidth-10;
+		yHeight=yHeight-10;
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<div>Box 1</div>
+	<div>Box 2</div>
+	<div>Box 3</div>
+	<div>Box 4</div>
+	<div>Box 5</div>
+</body>
+</html>

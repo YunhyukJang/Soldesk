@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+
+<style>
+div.out{
+width:200px;
+height:100px;
+border:1px solid #000000;
+text-align:center;
+background-color:yellow;
+}
+</style>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+var n=0;
+
+$(document).ready(function(){
+	$("div.out").mouseenter(function(){
+		$("p:first", this).text("마우스 포인터 들어옴");
+		$("p:last", this).text(++n);
+	});
+	
+	$("div.out").mouseleave(function(){
+		$("p:first", this).text("마우스 포인터 나감");
+		$("p:last", this).text("최종 횟수="+n);
+	});
+	
+	$("div.out").mousedown(function(){
+		$("p:first", this).hide();
+		$("p:last", this).text("메시지 사라짐");
+	});
+	
+	$("div.out").mouseup(function(){
+		$("p:first", this).show();
+		$("p:last", this).text("최종 횟수="+n);
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<div class="out">
+		<p>마우스 이벤트</p>
+		<p>0</p>
+	</div>
+</body>
+</html>
+<!-- mouseenter=마우스 포인터가 요소 선택자 안에 있으면 호출
+mouseleave=마우스 포인터가 요소 선택자 밖에 있으면 호출
+mousedown=버튼을 마우스로 누른 상태에서 호출
+mouseup=버튼에서 마우스를 떼면 호출 -->

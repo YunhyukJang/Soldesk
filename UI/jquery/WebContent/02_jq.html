@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("button.hide").click(function(){
+		$("p").hide();
+	});
+	
+	$("button.show").click(function(){
+		$("p").show();
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<p>다중 이벤트를 정의할 수 있다.</p>
+	<p>버튼 클릭 시 이벤트가 처리됩니다.</p>
+	
+	<button class="hide">메시지 삭제</button>
+	<button class="show">메시지 보기</button>
+</body>
+</html>

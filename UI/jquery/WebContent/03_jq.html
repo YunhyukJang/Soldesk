@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQuery</title>
+
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("ans").hide();
+	
+	$("p.a1").click(function(){
+		$("ans.a1").show();
+	});
+	
+	$("ans.a1").click(function(){
+		$("ans.a1").hide();
+	});
+	
+	$("p.a2").click(function(){
+		$("ans.a2").show();
+	});
+	
+	$("ans.a2").click(function(){
+		$("ans.a2").hide();
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<h2>질문 1:대한민국의 수도는 어디입니까?</h2>
+	
+	<p class="a1">[정답 보기]</p>
+	<ans class="a1">대한민국의 수도는 <strong>서울</strong> 입니다.</ans>
+	<br/>
+	
+	<h2>질문 2:대한민국의 국보 1호는 무엇입니까?</h2>
+	
+	<p class="a2">[정답 보기]</p>
+	<ans class="a2">대한민국의 국보 1호는 <strong>숭례문</strong> 입니다.</ans>
+</body>
+</html>
