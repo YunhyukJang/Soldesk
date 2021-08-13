@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax_Json</title>
+
+<script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+	//로드 버튼 클릭
+	$("#loadButton").click(function(){
+		$.ajax({
+			url:"dummy.json", 
+			type:"GET", 
+			datatype:"json", 
+			success:function(data){
+				alert(JSON.stringify(data));
+				
+				console.log(data);
+				
+				var title="안녕하세요";
+				
+				console.log(title);
+				console.log(data.title);
+				console.log(data.subject);
+				console.log(data.list);
+				
+				//부분 출력
+				$("#titleLayer").html("<h2>"+data.title+"</h2>");
+				$(".subjectLayer").html("<h2>"+data.subject+"</h2>");
+				
+				//배열 출력
+				var list=data.list;
+				var tableTag="";
+				
+				//방법 1. for문 활용
+				for(var i=0; i<list.length; i++){
+					tableTag += "<tr><td>"+list[i].subject+"</td><td>"
+					+list[i].content+"</td></tr>";
+				}
+				
+				$("table").html(tableTag);
+				
+				//방법 2. append 활용
+				for(var i=0; i<list.length; i++){
+					$("table").append("<tr><td>"+list[i].subject+"</td><td>"
+							+list[i].content+"</td></tr>");
+				}
+				
+				//방법 3. each문 활용
+				$.each(list, function(index,row){
+					tableTag += "<tr><td>"+row.subject+"</td><td>"+row.content+"</td></tr>";
+					})
+				
+				$("table").html(tableTag);
+			}
+		
+		})
+		
+	});
+	
+});
+</script>
+
+</head>
+<body>
+	<input type="button" value="로드" id="loadButton"/>
+	
+	<div id="titleLayer"></div>
+	<div class="subjectLayer"></div>
+	
+	<table width="100%" border="1"></table>
+</body>
+</html>
