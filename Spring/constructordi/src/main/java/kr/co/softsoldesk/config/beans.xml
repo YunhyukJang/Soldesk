@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans">
+	<!-- #1~#3 -->
+	<bean id="obj1" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true"/>
+	
+	<bean id="obj2" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="int" value="100"/>
+	</bean>
+	
+	<bean id="obj3" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="double" value="11.11"/>
+	</bean>
+	
+	<bean id="obj4" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="java.lang.String" value="오늘도 빛나는 너에게"/>
+	</bean>
+	
+	<bean id="obj5" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="int" value="2021"/>
+		<constructor-arg type="double" value="11.18"/>
+		<constructor-arg type="java.lang.String" value="종강"/>
+	</bean>
+	
+	<bean id="obj6" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="java.lang.String" value="종강"/>
+		<constructor-arg type="double" value="11.18"/>
+		<constructor-arg type="int" value="2021"/>
+	</bean>
+	
+	<bean id="obj7" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true">
+		<constructor-arg type="java.lang.String" value="종강" index="2"/>
+		<constructor-arg type="double" value="11.18" index="1"/>
+		<constructor-arg type="int" value="2021" index="0"/>
+	</bean>
+	
+	<!-- 객체를 매개변수로 받는 방법1 -->
+	<bean id="obj8" class="kr.co.softsoldesk.beans.TestBean2" lazy-init="true">
+		<!-- 첫 번째 매개변수 -->
+		<constructor-arg>
+			<bean class="kr.co.softsoldesk.beans.DataBean"/>
+		</constructor-arg>
+		
+		<!-- 두 번째 매개변수 -->
+		<constructor-arg>
+			<bean class="kr.co.softsoldesk.beans.DataBean"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- 객체를 매개변수로 받는 방법2 -->
+	<bean id="data_bean" class="kr.co.softsoldesk.beans.DataBean" scope="prototype"/>
+	
+	<bean id="obj9" class="kr.co.softsoldesk.beans.TestBean2" lazy-init="true">
+		<constructor-arg ref="data_bean"/>
+		<constructor-arg ref="data_bean"/>
+	</bean>
+	
+	<!-- 활용 -->
+	<bean id="sony" class="kr.co.softsoldesk.beans.SonySpeaker"/>
+	
+	<bean id="tv" class="kr.co.softsoldesk.beans.SamsungTV" scope="prototype">
+		<constructor-arg ref="sony"/>
+		
+		<constructor-arg type="int" value="27000000"/>
+	</bean>
+</beans>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans" 
+default-autowire="byName">
+	<!-- #1. Setter 주입을 이용한 객체 생성 -->
+	<bean id="obj1" class="kr.co.softsoldesk.beans.TestBean1">
+		<property name="data1" ref="data_bean1"/>
+		<property name="data2" ref="data_bean1"/>	
+	</bean>
+	
+	<!-- TestBean1에서 DataBean1을 참조하기 위해 DataBean1 class의 객체 생성(data_bean1, Multi) -->
+	<bean id="data_bean1" class="kr.co.softsoldesk.beans.DataBean1" scope="prototype"/>
+	
+	<!-- #2. byName 주입을 이용한 객체 생성 -->
+	<bean id="obj2" class="kr.co.softsoldesk.beans.TestBean1" autowire="byName"/>
+	
+	<bean id="data1" class="kr.co.softsoldesk.beans.DataBean1"/>
+	<bean id="data2" class="kr.co.softsoldesk.beans.DataBean1"/>
+	
+	<!-- #3. byType 주입을 이용한 객체 생성 -->
+	<bean id="obj3" class="kr.co.softsoldesk.beans.TestBean2" autowire="byType"/>
+	
+	<!-- #4 error로 인한 임시 주석 처리
+	<bean class="kr.co.softsoldesk.beans.DataBean2"/> -->
+	<!-- byType으로 주입 시 중복 주입 불가능 -->
+	<!-- <bean class="kr.co.softsoldesk.beans.DataBean2"/> -->
+	
+	<!-- #4. 생성자를 이용한 주입 -->
+	<bean id="obj4" class="kr.co.softsoldesk.beans.TestBean3">
+		<constructor-arg ref="data_bean2" index="0"/>
+		<constructor-arg ref="data_bean2" index="1"/>
+	</bean>
+	
+	<bean id="data_bean2" class="kr.co.softsoldesk.beans.DataBean2"/>
+	
+	<!-- #5. 생성자를 이용한 자동 주입 -->
+	<bean id="obj5" class="kr.co.softsoldesk.beans.TestBean3" autowire="constructor"/>
+	
+	<!-- #6. 4개짜리 생성자를 이용한 주입 -->
+	<bean id="obj6" class="kr.co.softsoldesk.beans.TestBean3">
+		<constructor-arg value="100" type="int" index="0"/>
+		<constructor-arg value="문자열1" type="java.lang.String" index="1"/>
+		<constructor-arg ref="data_bean2" index="2"/>
+		<constructor-arg ref="data_bean2" index="3"/>
+	</bean>
+	
+	<!-- #7. 4개짜리 생성자를 이용한 자동 주입 -->
+	<bean id="obj7" class="kr.co.softsoldesk.beans.TestBean3" autowire="constructor">
+		<constructor-arg value="200" type="int" index="0"/>
+		<constructor-arg value="문자열2" type="java.lang.String" index="1"/>
+	</bean>
+	
+	<!-- #8. 자동 주입을 하지 않고 default-autowire를 이용한 주입 -->
+	<bean id="obj8" class="kr.co.softsoldesk.beans.TestBean1"/>
+	
+	<!-- #9. default-autowire의 참조 거부 -->
+	<bean id="obj9" class="kr.co.softsoldesk.beans.TestBean1" autowire="no"/>
+</beans>

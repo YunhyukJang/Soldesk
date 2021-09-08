@@ -26,4 +26,21 @@
     <!--
     <Manager pathname="" />
     -->
+    <Resource auth="Container" 
+    name="jdbc/xe" 
+    driverClassName="oracle.jdbc.driver.OracleDriver" 
+    type="javax.sql.DataSource" 
+    url="jdbc:oracle:thin:@localhost:1521:xe" 
+    username="system" 
+    password="12341234" 
+    loginTimeout="10" 
+    maxActive="50" 
+    maxIdle="20" 
+    maxWait="5000" 
+    testOnBorrow="true"/>
 </Context>
+
+<!-- maxActive="50" -> 최대 연결 가능한 숫자를 지정
+maxIdle="20" -> Connection pool 유지를 위한 최대 대기 connection 숫자
+maxWait="5000" -> Connection pool을 재사용하기 위한 최대 대기시간 *단위=ms
+testOnBorrow="true" -> Connection pool로부터 connection 정보를 가져올 때 유효한 connection인지 검사 유/무 *default=false -->

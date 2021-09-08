@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context 
+http://www.springframework.org/schema/context/spring-context.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans" 
+xmlns:context="http://www.springframework.org/schema/context">
+	<!-- bean class에 설정되어 있는 annotation을 이용 -->
+	<context:annotation-config/>
+	
+	<!-- #1 -->
+	<bean id="xml1" class="kr.co.softsoldesk.beans.TestBean1">
+		<property name="data1" value="100"/>
+	</bean>
+	
+	<!-- #2 -->
+	<bean class="kr.co.softsoldesk.beans.DataBean1"/>
+	
+	<!-- #3은 자동 주입으로 선언하지 않음 -->
+	
+	<!-- #4 -->
+	<bean id="obj4" class="kr.co.softsoldesk.beans.DataBean2"/>
+	<bean id="obj5" class="kr.co.softsoldesk.beans.DataBean2"/>
+	
+	<!-- #5 -->
+	<!-- 등록되어 있으면 주입 없으면 무시 -->
+	<!-- <bean id="obj6" class="kr.co.softsoldesk.beans.DataBean2"/> -->
+	
+	<!-- TestBean2 -->
+	<bean id="xml2" class="kr.co.softsoldesk.beans.TestBean2"/>
+	
+	<bean class="kr.co.softsoldesk.beans.DataBean3"/>
+	<bean class="kr.co.softsoldesk.beans.DataBean4"/>
+</beans>

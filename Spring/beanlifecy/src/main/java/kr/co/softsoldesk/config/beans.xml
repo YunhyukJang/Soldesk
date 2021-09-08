@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans" 
+default-init-method="default_init" 
+default-destroy-method="default_destroy">
+	<!-- init-method=getBean 메서드를 사용할 때 객체의 생성자가 호출된 후 init-method에 등록된 메서드 자동실행
+	destroy-method=close 메서드를 호출하면 객체가 소멸되며 destroy-method에 등록된 메서드 자동실행 -->
+	<bean id="t1" class="kr.co.softsoldesk.beans.TestBean1" lazy-init="true" init-method="bean1_init" destroy-method="bean1_destroy"/>
+	
+	<!-- init-method와 destroy-method의 속성이 설정되어 있지 않다면 default-init-method와 default-destroy-method에 
+	의해서 호출된다. -->
+	<bean id="t2" class="kr.co.softsoldesk.beans.TestBean2" lazy-init="true"/>
+	
+	<!-- 만약 init-method와 destroy-method, default-init-method와 default-destroy-method가 모두 있을 경우 init-method와 
+	destroy-method에 있는 것이 호출된다. -->
+	<bean id="t3" class="kr.co.softsoldesk.beans.TestBean3" lazy-init="true" init-method="bean3_init" destroy-method="bean3_destroy"/>
+	
+	<!-- default-init-method, default-destroy-method -> 설정한 메서드가 없으면 무시하고 정상 호출
+	init-method, destroy-method -> 설정한 메서드가 없으면 error 발생 -->
+	<!-- <bean id="t4" class="kr.co.softsoldesk.beans.TestBean4" lazy-init="true" init-method="bean4_init" destroy-method="bean4_destroy"/> -->
+</beans>

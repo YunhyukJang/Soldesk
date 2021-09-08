@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans.xsd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://www.springframework.org/schema/beans">
+	<!-- #1. xml을 loading하면 자동으로 객체가 생성된다. -->
+	<bean class="kr.co.softsoldesk.beans.TestBean"/>
+	
+	<!-- #2. id 속성에 이름을 부여, 객체로 사용하여 주소값을 받는다. -->
+	<bean id="test1" class="kr.co.softsoldesk.beans.TestBean"/>
+	
+	<!-- #3. lazy-init="true" -> xml을 loading하면 자동으로 생성되던 객체가 생성되지 않는다. *생략하면 false --> 
+	<bean id="test2" class="kr.co.softsoldesk.beans.TestBean" lazy-init="true"/>
+	
+	<!-- #4. scope="prototype" -> #3+getBean 메서드를 호출하면 호출할 때마다 새로운 객체를 생성하여 반환한다. -->
+	<bean id="test3" class="kr.co.softsoldesk.beans.TestBean" scope="prototype"/>
+</beans>
