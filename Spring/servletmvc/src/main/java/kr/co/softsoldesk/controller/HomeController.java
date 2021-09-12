@@ -14,7 +14,7 @@ import kr.co.softsoldesk.model.Test2Service;
 @WebServlet("*.mvc")
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+
     public HomeController() {
         super();
     }
@@ -35,11 +35,13 @@ public class HomeController extends HttpServlet {
 		}else if(uri.contains("Test1.mvc")) {
 			//System.out.println("Test1 요청");
 			
+			//Parameter 값 받아오기
 			String str1=request.getParameter("data1");
 			String str2=request.getParameter("data2");
 			
-			int num1=Integer.parseInt(request.getParameter("data1"));
-			int num2=Integer.parseInt(request.getParameter("data2"));
+			//형 변환
+			int num1=Integer.parseInt(str1);
+			int num2=Integer.parseInt(str2);
 			int result=num1+num2;
 			
 			request.setAttribute("result", result);

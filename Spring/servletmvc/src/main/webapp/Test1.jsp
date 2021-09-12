@@ -7,8 +7,8 @@
 <title>Test1</title>
 </head>
 <body>
-	<h1>Test1.mvc</h1>
+	<h2>Test1.mvc</h2>
 	
-	<h2>result=${result}</h2>
+	<h3>result=${result}</h3>
 </body>
 </html>
